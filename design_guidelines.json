@@ -1,0 +1,146 @@
+{
+  "theme": "light",
+  "archetype": "Organic & Earthy",
+  "mood": "Warm, trustworthy, welcoming, and community-focused. Evokes a sense of heritage, safety, and growth, fitting for a regional public school in Indonesia.",
+  "colors": {
+    "background": "#FDFBF7",
+    "surface": "#F5F0E6",
+    "surface_alt": "#EAE2D3",
+    "primary": "#B24C27",
+    "primary_hover": "#8C3A1D",
+    "secondary": "#3E4C35",
+    "text_primary": "#2A231F",
+    "text_secondary": "#5C5046",
+    "border": "#D8CDBD",
+    "accent_warm": "#E8A365"
+  },
+  "typography": {
+    "heading_font": "Playfair Display",
+    "body_font": "Manrope",
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none text-text_primary",
+      "h2": "text-3xl sm:text-4xl tracking-tight text-text_primary",
+      "h3": "text-2xl sm:text-3xl text-text_primary",
+      "body_large": "text-lg sm:text-xl leading-relaxed text-text_secondary",
+      "body": "text-base leading-relaxed text-text_secondary",
+      "small": "text-sm text-text_secondary",
+      "overline": "text-xs tracking-[0.2em] uppercase font-bold text-primary"
+    }
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto",
+    "section_spacing": "py-20 lg:py-32",
+    "border_radius": "rounded-xl md:rounded-2xl",
+    "grid_system": "Bento Grid Protocol (Tetris Mode) for features/programs. Use generous gaps (gap-8 to gap-12). Never perfectly symmetrical."
+  },
+  "components": {
+    "hero": {
+      "style": "Min-h-[85vh] or h-screen. Left-aligned content. Large hero image in the background with a warm gradient overlay (bg-gradient-to-r from-black/70 via-black/40 to-transparent) to ensure text readability.",
+      "button": "Solid primary background (#B24C27), rounded-full, px-8 py-4, crisp typography. Hover effect: slight scale up and bg color darken."
+    },
+    "stats_card": {
+      "style": "Flat surface background (#F5F0E6), 1px border (#D8CDBD), no heavy drop shadows. Large numbers using Playfair Display in primary color (#B24C27)."
+    },
+    "general_card": {
+      "style": "Flat background, 1px subtle border, p-8 or p-10. Hover effect: slight lift (-translate-y-1) and subtle warm shadow."
+    }
+  },
+  "content_structure": {
+    "sections": [
+      {
+        "name": "Navbar",
+        "details": "Sticky top, glassmorphism (backdrop-blur-xl bg-background/80) or solid background. Contains Logo/School Name and links to About, Visi Misi, Stats, Programs."
+      },
+      {
+        "name": "Hero",
+        "copy": {
+          "title": "SMP Negeri 1 Sumber Jaya",
+          "tagline": "Membentuk Generasi Cerdas, Berakhlak, dan Berbudaya di Lampung Barat.",
+          "cta_primary": "Jelajahi Sekolah"
+        }
+      },
+      {
+        "name": "About (Tentang Sekolah)",
+        "copy": {
+          "heading": "Selamat Datang di SMPN 1 Sumber Jaya",
+          "text": "Sebagai sekolah menengah pertama negeri yang berdedikasi, kami berkomitmen mencetak generasi penerus bangsa yang berkualitas, berbudi pekerti luhur, dan berdaya saing.",
+          "badges": ["Akreditasi: B", "NPSN: 10803558", "Kurikulum Merdeka", "Kepala Sekolah: Adi Lesmana"]
+        }
+      },
+      {
+        "name": "Visi & Misi",
+        "copy": {
+          "visi_heading": "Visi Sekolah",
+          "visi_text": "Terwujudnya Peserta Didik yang Beriman, Bertaqwa, Berprestasi, dan Berwawasan Lingkungan.",
+          "misi_heading": "Misi Sekolah",
+          "misi_list": [
+            "Meningkatkan keimanan dan ketaqwaan kepada Tuhan YME.",
+            "Melaksanakan pembelajaran yang aktif, inovatif, kreatif, efektif dan menyenangkan.",
+            "Mendorong dan membantu siswa mengenali potensi dirinya.",
+            "Menumbuhkan penghayatan terhadap budaya bangsa dan kepedulian lingkungan."
+          ]
+        }
+      },
+      {
+        "name": "Statistik (Data Sekolah)",
+        "copy": {
+          "heading": "Sekolah Kami dalam Angka",
+          "stats": [
+            { "label": "Total Siswa", "value": "634" },
+            { "label": "Siswa Laki-laki", "value": "308" },
+            { "label": "Siswa Perempuan", "value": "326" },
+            { "label": "Guru & Staf", "value": "46" },
+            { "label": "Ruang Kelas", "value": "15" },
+            { "label": "Rombongan Belajar", "value": "21" }
+          ]
+        }
+      },
+      {
+        "name": "Program Unggulan",
+        "copy": {
+          "heading": "Program & Ekstrakurikuler",
+          "programs": [
+            "Kurikulum Merdeka",
+            "Pramuka & Kepanduan",
+            "Seni & Budaya Lokal",
+            "Olahraga & Prestasi"
+          ]
+        }
+      },
+      {
+        "name": "Footer",
+        "copy": {
+          "address": "Jl. Banda Mulya No 72 Sukapura, Kec. Sumber Jaya, Kab. Lampung Barat, Prov. Lampung",
+          "phone": "0723465335",
+          "hours": "Penyelenggaraan: Pagi / 6 Hari",
+          "copyright": "© 2026 SMP Negeri 1 Sumber Jaya. Hak Cipta Dilindungi."
+        }
+      }
+    ]
+  },
+  "media_urls": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/10646419/pexels-photo-10646419.jpeg",
+      "description": "Schoolgirls in uniforms outdoors, capturing a welcoming school environment."
+    },
+    "about_section": {
+      "url": "https://images.pexels.com/photos/17144608/pexels-photo-17144608.jpeg",
+      "description": "Modern educational building exterior representing the school."
+    },
+    "program_highlight": {
+      "url": "https://images.pexels.com/photos/8199138/pexels-photo-8199138.jpeg",
+      "description": "Student studying, representing academic programs."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build a static React/Tailwind landing page in Javascript (.js files, NOT .tsx).",
+    "Use pure functional components in JS. No TypeScript.",
+    "Do NOT use 'Inter', 'Roboto', or 'Open Sans'. Add `<link href=\"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap\" rel=\"stylesheet\">` to index.html.",
+    "Configure Tailwind config to use 'Playfair Display' for sans/serif and 'Manrope' for body.",
+    "Extend Tailwind colors in tailwind.config.js to include the custom colors provided in this JSON.",
+    "Use Phosphor icons (@phosphor-icons/react) or lucide-react for iconography.",
+    "Ensure high contrast for text over images. Use gradients or solid dark overlays to achieve this.",
+    "Add `data-testid` attributes to all interactive elements (buttons, links, form inputs) and key informational sections (e.g., data-testid='hero-cta', data-testid='about-section').",
+    "Avoid generic 'tech SaaS' components. Use the warm, organic, earthy aesthetic described. Use generous padding (py-24, p-8) and organic layouts."
+  ]
+}

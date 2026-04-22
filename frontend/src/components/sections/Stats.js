@@ -123,7 +123,7 @@ export const Stats = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Sekolah kami dalam{" "}
-              <em className="italic font-normal text-coral">angka.</em>
+              <em className="not-italic font-semibold text-coral">angka.</em>
             </h2>
           </div>
           <p className="max-w-md text-[15.5px] leading-relaxed text-ink-soft">

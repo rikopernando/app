@@ -28,8 +28,8 @@ export const VisiMisi = () => {
             data-testid="visi-misi-heading"
             className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
           >
-            Dibangun di atas <em className="italic font-normal text-mint-600">nilai</em>,
-            diarahkan oleh <em className="italic font-normal text-coral">tujuan</em>.
+            Dibangun di atas <em className="not-italic font-semibold text-mint-600">nilai</em>,
+            diarahkan oleh <em className="not-italic font-semibold text-coral">tujuan</em>.
           </h2>
         </div>
 
@@ -52,9 +52,9 @@ export const VisiMisi = () => {
 
               <p className="font-display text-2xl sm:text-3xl leading-[1.25] text-white text-pretty">
                 “Terwujudnya peserta didik yang{" "}
-                <span className="text-honey-300 italic">beriman</span>,{" "}
-                <span className="text-honey-300 italic">bertaqwa</span>,{" "}
-                <span className="text-honey-300 italic">berprestasi</span>, dan berwawasan lingkungan.”
+                <span className="text-honey-300 font-semibold">beriman</span>,{" "}
+                <span className="text-honey-300 font-semibold">bertaqwa</span>,{" "}
+                <span className="text-honey-300 font-semibold">berprestasi</span>, dan berwawasan lingkungan.”
               </p>
 
               <div className="mt-10 pt-6 border-t border-white/20 text-[12px] tracking-[0.16em] uppercase text-white/75 font-semibold">

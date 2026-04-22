@@ -45,18 +45,18 @@ export const Hero = () => {
             <h1
               data-testid="hero-title"
               className="font-display mt-7 text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-ink text-balance animate-fade-up"
-              style={{ animationDelay: "160ms", fontVariationSettings: '"SOFT" 100, "opsz" 144' }}
+              style={{ animationDelay: "160ms" }}
             >
               Tempat{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 italic text-coral-700">belajar</span>
+                <span className="relative z-10 font-bold text-coral-700">belajar</span>
                 <span
                   aria-hidden
                   className="absolute left-0 right-0 bottom-1 h-3 bg-honey/60 rounded-full -z-0"
                 />
               </span>
               {" "}yang{" "}
-              <span className="italic font-normal text-sky-600">hangat</span> untuk
+              <span className="font-semibold text-sky-600">hangat</span> untuk
               tumbuh bersama teman.
             </h1>
 

@@ -67,7 +67,7 @@ export const PPDB = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-cream-50 text-balance"
             >
               Yuk, jadi bagian dari{" "}
-              <em className="italic font-normal text-honey-300">keluarga baru</em> di SMPN 1 Sumber Jaya.
+              <em className="not-italic font-semibold text-honey-300">keluarga baru</em> di SMPN 1 Sumber Jaya.
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15.5px] leading-relaxed text-cream-300 max-w-md lg:ml-auto">

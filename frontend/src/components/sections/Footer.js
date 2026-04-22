@@ -31,7 +31,7 @@ export const Footer = () => {
             className="font-display mt-6 text-5xl sm:text-6xl lg:text-7xl leading-[0.98] tracking-tight text-ink text-balance max-w-5xl"
           >
             Datang, lihat, dan rasakan langsung{" "}
-            <em className="italic font-normal text-coral">suasana belajar</em> di sekolah kami.
+            <em className="not-italic font-semibold text-coral">suasana belajar</em> di sekolah kami.
           </h2>
         </div>
 

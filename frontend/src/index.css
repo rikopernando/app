@@ -49,13 +49,14 @@
 
 @layer utilities {
     .font-display {
-        font-family: "Fraunces", Georgia, serif;
-        font-variation-settings: "SOFT" 80, "WONK" 0, "opsz" 80;
-        font-feature-settings: "ss01", "ss02";
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-variation-settings: "opsz" 96;
+        letter-spacing: -0.02em;
     }
-    .font-display-wonky {
-        font-family: "Fraunces", Georgia, serif;
-        font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+    .font-display-tight {
+        font-family: "Bricolage Grotesque", system-ui, sans-serif;
+        font-variation-settings: "opsz" 72;
+        letter-spacing: -0.03em;
     }
     .text-balance { text-wrap: balance; }
     .text-pretty { text-wrap: pretty; }

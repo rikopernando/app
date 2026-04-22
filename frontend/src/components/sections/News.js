@@ -55,7 +55,7 @@ export const News = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Cerita hangat{" "}
-              <em className="italic font-normal text-sky-600">dari sekolah kami.</em>
+              <em className="not-italic font-semibold text-sky-600">dari sekolah kami.</em>
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15.5px] leading-relaxed text-ink-soft max-w-md lg:ml-auto">

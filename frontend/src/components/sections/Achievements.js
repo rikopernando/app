@@ -83,7 +83,7 @@ export const Achievements = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Karya & prestasi{" "}
-              <em className="italic font-normal text-honey-600">anak-anak kami.</em>
+              <em className="not-italic font-semibold text-honey-600">anak-anak kami.</em>
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15.5px] leading-relaxed text-ink-soft max-w-md lg:ml-auto">
@@ -158,7 +158,7 @@ export const Achievements = () => {
                 <p
                   className={`mt-8 font-display text-lg leading-none tracking-tight ${
                     c.bg.includes("bg-coral") ? "text-honey-300" : "text-coral"
-                  } italic`}
+                  } font-bold`}
                 >
                   {a.rank}
                 </p>

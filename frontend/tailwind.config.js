@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Fraunces"', "Georgia", "serif"],
+        display: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
         sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
       },
       borderRadius: {

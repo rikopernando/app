@@ -62,7 +62,7 @@ export const About = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Sekolah yang hadir seperti{" "}
-              <em className="italic font-normal text-coral">rumah kedua</em> bagi anakmu.
+              <em className="not-italic font-semibold text-coral">rumah kedua</em> bagi anakmu.
             </h2>
 
             <div className="mt-7 space-y-5 text-[16.5px] leading-relaxed text-ink-soft max-w-2xl">

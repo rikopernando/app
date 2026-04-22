@@ -1,63 +1,90 @@
-# PRD — SMP Negeri 1 Sumber Jaya · Landing Page
+# PRD — SMP Negeri 1 Sumber Jaya · Landing Page + Next.js
 
 ## Original Problem Statement
 > Build me a landing page for school website
 
-## User Choices
-- **School type**: Junior High School (SMP)
-- **School name**: SMP N 1 Sumber Jaya (SMP Negeri 1 Sumber Jaya, Lampung Barat, Indonesia)
-- **Language**: Indonesian (Bahasa Indonesia)
-- **Type**: Landing page only (no backend, static)
+## Evolution
+- **v1 (2026-04-21)** CRA + earthy terracotta + Playfair/Manrope
+- **v2 (2026-04-22)** CRA + soft friendly palette + Fraunces (serif)
+- **v2.1 (2026-04-22)** CRA + Bricolage Grotesque (replace Fraunces)
+- **v3 (2026-04-22)** **Next.js 15 + TypeScript** migration → SSR/SSG, SEO-ready
 
-## Design Evolution
-- **v1 (2026-04-21)**: "Organic & Earthy" — terracotta + cream + forest, Playfair Display + Manrope
-- **v2 (2026-04-22)**: "Soft & Friendly" — cream + coral + sky + mint + honey, Fraunces + Plus Jakarta Sans
-  → chosen to feel more modern, welcoming, and appropriate for SMP students & their parents
+## Architecture (v3)
+- **Stack**: Next.js 15 App Router + TypeScript + Tailwind CSS + Sonner toasts — frontend only
+- **Rendering**: SSG for listing pages, static per-slug pages via `generateStaticParams`, per-page metadata via `generateMetadata`
+- **Fonts**: loaded via `next/font/google` (Bricolage Grotesque + Plus Jakarta Sans) — no render-blocking
+- **SEO**: per-page `<title>`, meta description, OpenGraph + Twitter cards with images, canonical URL, `sitemap.xml` (auto-generated, 13 URLs), `robots.txt`
+- **Images**: Next `<Image>` with optimization + remote patterns for Pexels
+- **TypeScript**: strict mode, `@/*` path alias, shared types in `lib/types.ts`
 
-## Architecture
-- **Stack**: React (CRA) + Tailwind CSS + lucide-react icons + Sonner (toasts) — **frontend only**
-- **Design tokens (v2)**: `cream` (base), `coral` (primary), `sky` (secondary), `mint` + `honey` (accents), `ink` (warm navy)
-- **Fonts**: Fraunces (variable serif, SOFT + WONK axes) headings + Plus Jakarta Sans body
-- **Components**: `/app/frontend/src/components/sections/` → Navbar, Hero, About, Stats, VisiMisi, Programs, PPDB, News, Achievements, Footer
-- **Entry**: `/app/frontend/src/App.js` composes `<Landing />` under `/` route + mounts Sonner `<Toaster>`
+### File structure
+```
+/app/frontend/
+├── app/
+│   ├── layout.tsx              # Root layout + fonts + metadata + Toaster
+│   ├── page.tsx                # Landing (/)
+│   ├── globals.css
+│   ├── sitemap.ts              # Dynamic sitemap (13 URLs)
+│   ├── robots.ts               # robots.txt
+│   ├── berita/
+│   │   ├── page.tsx            # Berita listing
+│   │   └── [slug]/page.tsx     # Berita detail (generateStaticParams + metadata)
+│   ├── pengumuman/
+│   │   ├── page.tsx
+│   │   └── [slug]/page.tsx
+│   └── prestasi/
+│       └── page.tsx            # Full achievements page
+├── components/sections/        # 10 TSX components
+├── lib/
+│   ├── data.ts                 # NEWS (5), PENGUMUMAN (4), ACHIEVEMENTS (8)
+│   ├── site.ts                 # Site constants
+│   └── types.ts                # TS types
+├── next.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+```
 
-## User Personas
-- **Orang tua calon siswa** — evaluating a public junior high, wants clarity on PPDB, akreditasi, prestasi
-- **Calon siswa SMP** — first impression of school culture & extracurricular vibe
-- **Alumni & komunitas** — school news, achievements, contact info
+### Routes
+| Route | Type | SEO |
+|-------|------|-----|
+| `/` | SSG landing | og:website |
+| `/berita` | SSG listing | og:website |
+| `/berita/[slug]` | SSG per article | og:article + og:image + published_time + author |
+| `/pengumuman` | SSG listing | og:website |
+| `/pengumuman/[slug]` | SSG per item | og:article |
+| `/prestasi` | SSG | og:website |
+| `/sitemap.xml` | auto | — |
+| `/robots.txt` | auto | — |
 
-## What's Been Implemented
-### 2026-04-21 (v1)
-- 7 sections, warm earthy palette, verified 100% by testing agent
-### 2026-04-22 (v2 — redesign + 3 new sections)
-- ✅ Full redesign: soft friendly modern palette, Fraunces+PJS fonts, rounded-3xl cards, soft shadows, decorative blobs
-- ✅ Navbar refreshed with pill nav + Daftar PPDB CTA
-- ✅ Hero redesigned as light soft layout with image collage + 3 floating cards (46 Guru, 12+ Ekstrakurikuler, Sejak 1985)
-- ✅ About + Stats + Visi Misi + Programs restyled with soft palette
-- ✅ **NEW — PPDB (#ppdb)**: dark navy feature section with 4-step timeline (10 Mei → 10 Jun), 6-item syarat checklist, coral download CTA that triggers Sonner success toast
-- ✅ **NEW — Berita/News (#berita)**: 1 featured article (PPDB 2026/2027) + 3 side articles (Hari Kartini, Workshop Kurikulum, Ramadhan)
-- ✅ **NEW — Galeri Prestasi (#prestasi)**: bento grid with featured Juara 1 card + 4 achievements + tally strip (47 penghargaan · 18 Akademik / 14 Olahraga / 10 Seni / 5 Karakter)
-- ✅ Footer updated with new palette + new Jelajahi links
-- ✅ Testing agent: **100% pass**, zero console errors, Sonner toast verified working
+## Key Wins (v3)
+- ✅ Per-page unique SEO tags (Google + WhatsApp/Facebook share previews)
+- ✅ Content server-rendered (visible to bots without JS)
+- ✅ 13-URL sitemap auto-generated from content
+- ✅ Image optimization built-in via next/image
+- ✅ Testing agent: **100% pass**, 0 console errors, all SEO checks verified via curl
 
 ## Prioritized Backlog
 ### P1
-- [ ] Replace Pexels stock photos with real school photos
-- [ ] Serve actual PPDB formulir PDF (currently toast-only placeholder)
-- [ ] Lazy-load hero/program/news images
+- [ ] Replace Pexels images with real school photos
+- [ ] Real PPDB PDF served from `/public/ppdb/formulir-ppdb-2026.pdf`
+- [ ] Prune legacy CRA dependencies (react-scripts, craco, react-router-dom) to shrink bundle
+- [ ] Custom OG image at `/public/og-image.jpg` for better social previews
 
 ### P2
-- [ ] Faculty / Guru highlight section with photos
-- [ ] Embedded Google Maps of school location
-- [ ] Working contact/enquiry form with backend (MongoDB)
-- [ ] News detail pages (currently "Baca selengkapnya" is anchor-only)
-- [ ] Achievements detail modal / expanded view
-- [ ] Multi-language toggle (ID/EN)
+- [ ] CMS integration (e.g., Payload, Sanity, or Contentlayer) so school staff can post berita/pengumuman without deploy
+- [ ] Search functionality on /berita & /pengumuman
+- [ ] Category filter on /berita
+- [ ] Pagination when berita > 12
+- [ ] Related articles algorithm improvement
+- [ ] ISR (Incremental Static Regeneration) once CMS is integrated
+- [ ] JSON-LD structured data (Organization, EducationalOrganization, Article schema)
+- [ ] Google Analytics / Plausible
+- [ ] PPDB online form (MongoDB backend)
 
 ### P0
 (No blocking issues.)
 
 ## Next Tasks
-1. Upload real school photos + real PPDB PDF
-2. Add dedicated Kepala Sekolah / Guru profile section
-3. Optional: activate working contact form with backend to capture parent enquiries
+1. Replace images with real school photos + add real PPDB PDF
+2. Add JSON-LD structured data for richer Google results
+3. Set up a CMS so school staff can self-publish berita

@@ -13,46 +13,16 @@ const PROGRAMS = [
     icon: BookOpenText,
     tag: "Kurikulum",
     title: "Kurikulum Merdeka",
-    desc: "Pembelajaran berbasis projek & minat, menumbuhkan nalar kritis dan profil Pelajar Pancasila.",
+    desc: "Pembelajaran berbasis proyek & minat, menumbuhkan nalar kritis dan Profil Pelajar Pancasila.",
     span: "lg:col-span-3 lg:row-span-2",
     img: "https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=900",
     featured: true,
   },
-  {
-    icon: Tent,
-    tag: "Karakter",
-    title: "Pramuka & Kepanduan",
-    desc: "Pembentukan karakter, kemandirian, dan kepemimpinan.",
-    span: "lg:col-span-3",
-  },
-  {
-    icon: Palette,
-    tag: "Seni",
-    title: "Seni & Budaya Lokal",
-    desc: "Tari, musik tradisional, dan kearifan Lampung Barat.",
-    span: "lg:col-span-3",
-  },
-  {
-    icon: Trophy,
-    tag: "Prestasi",
-    title: "Olahraga Kompetitif",
-    desc: "Sepak bola, bola voli, atletik, dan pencak silat.",
-    span: "lg:col-span-2",
-  },
-  {
-    icon: Sprout,
-    tag: "Lingkungan",
-    title: "Sekolah Adiwiyata",
-    desc: "Budaya hijau & kepedulian ekosistem sekitar sekolah.",
-    span: "lg:col-span-2",
-  },
-  {
-    icon: MonitorSmartphone,
-    tag: "Literasi Digital",
-    title: "Literasi TIK",
-    desc: "Pengenalan teknologi, keamanan digital, dan kolaborasi daring.",
-    span: "lg:col-span-2",
-  },
+  { icon: Tent, tag: "Karakter", title: "Pramuka & Kepanduan", desc: "Pembentukan karakter, kemandirian, kepemimpinan.", span: "lg:col-span-3", color: "bg-coral-50 text-coral-700" },
+  { icon: Palette, tag: "Seni", title: "Seni & Budaya Lokal", desc: "Tari, musik tradisional, kearifan Lampung Barat.", span: "lg:col-span-3", color: "bg-mint-50 text-mint-600" },
+  { icon: Trophy, tag: "Prestasi", title: "Olahraga", desc: "Voli, sepak bola, atletik, pencak silat.", span: "lg:col-span-2", color: "bg-honey-50 text-honey-600" },
+  { icon: Sprout, tag: "Lingkungan", title: "Adiwiyata", desc: "Budaya hijau & kepedulian ekosistem sekolah.", span: "lg:col-span-2", color: "bg-mint-50 text-mint-600" },
+  { icon: MonitorSmartphone, tag: "Digital", title: "Literasi TIK", desc: "Teknologi, keamanan digital, kolaborasi daring.", span: "lg:col-span-2", color: "bg-sky-50 text-sky-600" },
 ];
 
 export const Programs = () => {
@@ -60,34 +30,27 @@ export const Programs = () => {
     <section
       id="program"
       data-testid="programs-section"
-      className="relative py-24 lg:py-36 bg-clay-50 overflow-hidden"
+      className="relative py-24 lg:py-32 bg-cream-100/50"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 lg:mb-20 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 items-end">
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-7">
-              <span className="h-px w-10 bg-terra" />
-              <span className="text-[11px] tracking-[0.24em] uppercase text-terra font-semibold">
-                Program Unggulan
-              </span>
-            </div>
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-honey-50 text-honey-600 text-[11px] tracking-[0.18em] uppercase font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-honey" /> Program & Ekstrakurikuler
+            </span>
             <h2
               data-testid="programs-heading"
-              className="font-display text-4xl sm:text-5xl lg:text-[56px] leading-[1.05] tracking-tight text-ink text-balance"
+              className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
-              Belajar lebih luas dari{" "}
-              <em className="italic font-normal text-terra">sekadar kelas.</em>
+              Belajar lebih dari{" "}
+              <em className="italic font-normal text-coral">sekadar kelas.</em>
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15.5px] leading-relaxed text-ink-soft max-w-md lg:ml-auto">
-            Kami merancang pengalaman belajar yang memadukan akademik,
-            karakter, seni, olahraga, dan kepedulian terhadap lingkungan — agar
-            setiap siswa menemukan jalurnya sendiri.
+            Kami memadukan akademik, karakter, seni, olahraga & kepedulian lingkungan — biar setiap anak menemukan jalurnya sendiri.
           </p>
         </div>
 
-        {/* Bento grid */}
         <div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 auto-rows-[minmax(220px,auto)] gap-5 lg:gap-6"
           data-testid="programs-grid"
@@ -98,34 +61,32 @@ export const Programs = () => {
               return (
                 <article
                   key={i}
-                  data-testid={`program-card-${p.title.toLowerCase().replace(/\s|&/g, "-")}`}
-                  className={`${p.span} relative rounded-3xl overflow-hidden bg-ink text-clay-50 group`}
+                  data-testid={`program-card-kurikulum-merdeka`}
+                  className={`${p.span} relative rounded-[32px] overflow-hidden group shadow-soft-lg`}
                 >
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="absolute inset-0 w-full h-full object-cover opacity-55 group-hover:opacity-65 group-hover:scale-[1.04] transition-all duration-[1200ms] ease-out"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-[1200ms] ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-ink/85 via-ink/50 to-ink/10" />
-                  <div className="relative z-10 h-full p-8 lg:p-10 flex flex-col justify-between min-h-[440px]">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10.5px] tracking-[0.22em] uppercase text-sand font-semibold">
-                          {p.tag}
-                        </span>
-                      </div>
-                      <div className="mt-6 w-14 h-14 rounded-2xl bg-clay-50/10 border border-clay-50/20 flex items-center justify-center backdrop-blur-sm">
-                        <Icon size={22} className="text-sand" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/60 to-ink/20" />
+                  <div className="relative z-10 h-full p-8 lg:p-10 flex flex-col justify-between min-h-[460px]">
+                    <div className="flex items-start justify-between">
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-[10.5px] tracking-[0.16em] uppercase font-bold text-honey-300">
+                        {p.tag}
+                      </span>
+                      <div className="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                        <Icon size={20} className="text-white" />
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-display text-3xl lg:text-4xl leading-[1.1] text-clay-50 text-balance max-w-sm">
+                      <h3 className="font-display text-3xl lg:text-4xl leading-[1.1] text-white text-balance max-w-sm">
                         {p.title}
                       </h3>
-                      <p className="mt-4 text-[14.5px] leading-relaxed text-clay-200 max-w-md">
+                      <p className="mt-4 text-[14.5px] leading-relaxed text-white/85 max-w-md">
                         {p.desc}
                       </p>
-                      <div className="mt-8 inline-flex items-center gap-2 text-sand text-[13px] font-semibold tracking-wide">
+                      <div className="mt-7 inline-flex items-center gap-2 text-honey-300 text-[13px] font-bold tracking-wide">
                         Pelajari kurikulum
                         <ArrowUpRight size={15} className="transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>
@@ -138,23 +99,22 @@ export const Programs = () => {
               <article
                 key={i}
                 data-testid={`program-card-${p.title.toLowerCase().replace(/\s|&/g, "-")}`}
-                className={`${p.span} group relative rounded-3xl p-7 lg:p-8 bg-clay-100/60 border border-clay-300 hover:bg-clay-100 hover:-translate-y-1 hover:border-terra/40 transition-all duration-500`}
+                className={`${p.span} group relative rounded-[28px] p-7 bg-white border border-cream-200 hover:border-cream-300 hover:-translate-y-1 hover:shadow-soft-lg transition-all duration-500`}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-clay-50 border border-clay-300 flex items-center justify-center group-hover:bg-terra group-hover:border-terra transition-colors duration-500">
-                    <Icon
-                      size={19}
-                      className="text-terra group-hover:text-clay-50 transition-colors duration-500"
-                    />
+                  <div
+                    className={`w-12 h-12 rounded-2xl ${p.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
+                  >
+                    <Icon size={19} />
                   </div>
-                  <span className="text-[10px] tracking-[0.22em] uppercase text-ink-soft/70 font-semibold">
+                  <span className="text-[10px] tracking-[0.18em] uppercase text-ink-faint font-bold">
                     {p.tag}
                   </span>
                 </div>
                 <h3 className="font-display text-2xl leading-[1.15] text-ink">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-[14px] leading-relaxed text-ink-soft">
+                <p className="mt-2.5 text-[14px] leading-relaxed text-ink-soft">
                   {p.desc}
                 </p>
               </article>

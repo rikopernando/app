@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 const NAV_LINKS = [
   { label: "Tentang", href: "#tentang" },
-  { label: "Visi & Misi", href: "#visi-misi" },
-  { label: "Statistik", href: "#statistik" },
   { label: "Program", href: "#program" },
-  { label: "Kontak", href: "#kontak" },
+  { label: "PPDB", href: "#ppdb" },
+  { label: "Berita", href: "#berita" },
+  { label: "Prestasi", href: "#prestasi" },
 ];
 
 export const Navbar = () => {
@@ -25,65 +25,57 @@ export const Navbar = () => {
       data-testid="navbar"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-clay-50/85 backdrop-blur-xl border-b border-clay-300/70"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-cream-50/85 backdrop-blur-xl border-b border-cream-300/60 shadow-[0_4px_30px_-8px_rgba(31,43,71,0.06)]"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <a
-            href="#beranda"
-            data-testid="nav-logo"
-            className="flex items-center gap-3 group"
-          >
-            <div className="relative w-11 h-11 rounded-full bg-terra flex items-center justify-center ring-1 ring-terra-dark/40 transition-transform duration-500 group-hover:rotate-[10deg]">
-              <span className="font-display text-clay-50 text-lg font-bold leading-none">
-                S
-              </span>
-              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-sand ring-2 ring-clay-50" />
+          <a href="#beranda" data-testid="nav-logo" className="flex items-center gap-3 group">
+            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-coral to-coral-600 flex items-center justify-center ring-1 ring-coral-600/30 shadow-glow transition-transform duration-500 group-hover:rotate-[-6deg]">
+              <span className="font-display text-white text-lg font-bold leading-none">S</span>
+              <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-honey ring-2 ring-cream-50" />
             </div>
             <div className="leading-tight">
-              <p className="font-display text-[15px] font-semibold text-ink tracking-tight">
+              <p className="font-display text-[15.5px] font-semibold text-ink tracking-tight">
                 SMPN 1 Sumber Jaya
               </p>
-              <p className="text-[10.5px] uppercase tracking-[0.18em] text-ink-soft">
-                Lampung Barat · Sejak 1985
+              <p className="text-[10.5px] uppercase tracking-[0.16em] text-ink-soft font-semibold">
+                Sekolah Ramah Anak · Sejak 1985
               </p>
             </div>
           </a>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-9">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/60 backdrop-blur-sm border border-cream-300/80 rounded-full px-2 py-1.5">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                data-testid={`nav-link-${l.label.toLowerCase().replace(/\s|&/g, "-")}`}
-                className="text-[13.5px] font-medium text-ink-soft hover:text-terra transition-colors duration-300 relative group"
+                data-testid={`nav-link-${l.label.toLowerCase()}`}
+                className="px-4 py-2 rounded-full text-[13.5px] font-semibold text-ink-soft hover:text-ink hover:bg-cream-100 transition-all duration-300"
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-terra transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="#kontak"
-              data-testid="nav-cta-kontak"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-clay-50 text-[13px] font-semibold tracking-wide hover:bg-terra transition-all duration-400 hover:-translate-y-0.5"
+              href="#ppdb"
+              data-testid="nav-cta-ppdb"
+              className="group inline-flex items-center gap-2 pl-5 pr-2.5 py-2 rounded-full bg-ink text-cream-50 text-[13px] font-semibold tracking-wide hover:bg-coral transition-all duration-500"
             >
-              Hubungi Kami
-              <span className="inline-block translate-y-px">→</span>
+              Daftar PPDB
+              <span className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                <Sparkles size={13} />
+              </span>
             </a>
           </div>
 
-          {/* Mobile toggle */}
           <button
             onClick={() => setOpen(!open)}
             data-testid="nav-mobile-toggle"
-            className="lg:hidden w-11 h-11 rounded-full border border-clay-300 bg-clay-50/80 flex items-center justify-center text-ink"
+            className="lg:hidden w-11 h-11 rounded-2xl border border-cream-300 bg-white/80 flex items-center justify-center text-ink"
             aria-label="Toggle menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -91,29 +83,25 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div
-          data-testid="nav-mobile-menu"
-          className="lg:hidden bg-clay-50 border-t border-clay-300/70"
-        >
-          <div className="px-5 py-6 flex flex-col gap-1">
+        <div data-testid="nav-mobile-menu" className="lg:hidden bg-cream-50 border-t border-cream-300">
+          <div className="px-5 py-5 flex flex-col gap-1">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="px-4 py-3 rounded-xl text-ink font-medium hover:bg-clay-100 transition-colors"
+                className="px-4 py-3 rounded-xl text-ink font-medium hover:bg-cream-100 transition-colors"
               >
                 {l.label}
               </a>
             ))}
             <a
-              href="#kontak"
+              href="#ppdb"
               onClick={() => setOpen(false)}
-              className="mt-3 inline-flex justify-center items-center px-5 py-3 rounded-full bg-terra text-clay-50 font-semibold"
+              className="mt-2 inline-flex justify-center items-center px-5 py-3 rounded-full bg-coral text-white font-semibold shadow-glow"
             >
-              Hubungi Kami →
+              Daftar PPDB ✨
             </a>
           </div>
         </div>

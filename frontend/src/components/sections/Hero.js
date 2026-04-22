@@ -1,127 +1,188 @@
-import { ArrowUpRight, GraduationCap } from "lucide-react";
+import { ArrowRight, GraduationCap, Sparkles, Star } from "lucide-react";
 
 const HERO_IMG =
-  "https://images.pexels.com/photos/5905445/pexels-photo-5905445.jpeg?auto=compress&cs=tinysrgb&w=1920";
+  "https://images.pexels.com/photos/8617769/pexels-photo-8617769.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 export const Hero = () => {
   return (
     <section
       id="beranda"
       data-testid="hero-section"
-      className="relative min-h-screen w-full overflow-hidden bg-ink"
+      className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-cream-50"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src={HERO_IMG}
-          alt="Siswa SMP belajar di kelas"
-          className="w-full h-full object-cover animate-slow-zoom"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80" />
-      </div>
+      {/* Soft decorative blobs */}
+      <div
+        aria-hidden
+        className="absolute top-32 -left-20 w-[360px] h-[360px] bg-honey/35 blur-3xl rounded-full"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-10 right-[-80px] w-[440px] h-[440px] bg-mint/35 blur-3xl rounded-full"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-dot-grid opacity-[0.04]"
+      />
 
-      {/* Decorative frame */}
-      <div className="absolute inset-6 md:inset-10 border border-clay-50/10 rounded-[24px] pointer-events-none" />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 pt-40 pb-28 lg:pt-52 lg:pb-40">
-        <div className="max-w-3xl">
-          {/* Eyebrow */}
-          <div
-            className="inline-flex items-center gap-3 mb-10 animate-fade-up"
-            style={{ animationDelay: "80ms" }}
-          >
-            <span className="h-px w-10 bg-sand" />
-            <span className="text-[11px] tracking-[0.24em] uppercase text-sand font-semibold">
-              Sekolah Menengah Pertama Negeri · Lampung Barat
-            </span>
-          </div>
-
-          {/* Headline */}
-          <h1
-            className="font-display text-5xl sm:text-6xl lg:text-[82px] leading-[0.95] tracking-tight text-clay-50 text-balance animate-fade-up"
-            style={{ animationDelay: "180ms" }}
-            data-testid="hero-title"
-          >
-            Menumbuhkan{" "}
-            <span className="italic font-normal text-sand">
-              generasi
-            </span>{" "}
-            yang cerdas, berakhlak, dan berdaya saing.
-          </h1>
-
-          {/* Subheading */}
-          <p
-            className="mt-8 text-lg sm:text-xl leading-relaxed text-clay-200/90 max-w-2xl animate-fade-up"
-            style={{ animationDelay: "320ms" }}
-            data-testid="hero-subtitle"
-          >
-            SMP Negeri 1 Sumber Jaya hadir sebagai rumah belajar bagi{" "}
-            <span className="text-clay-50 font-medium">634 siswa</span> di
-            Sumber Jaya, Lampung Barat — membimbing mereka dengan
-            Kurikulum Merdeka, guru berdedikasi, dan budaya lokal yang kuat.
-          </p>
-
-          {/* CTAs */}
-          <div
-            className="mt-12 flex flex-wrap items-center gap-4 animate-fade-up"
-            style={{ animationDelay: "460ms" }}
-          >
-            <a
-              href="#tentang"
-              data-testid="hero-cta-primary"
-              className="group inline-flex items-center gap-3 pl-7 pr-5 py-4 rounded-full bg-terra text-clay-50 font-semibold tracking-wide hover:bg-terra-dark transition-all duration-500 hover:-translate-y-0.5 shadow-[0_12px_40px_-12px_rgba(178,76,39,0.7)]"
-            >
-              Jelajahi Sekolah
-              <span className="w-9 h-9 rounded-full bg-clay-50/20 flex items-center justify-center transition-transform duration-500 group-hover:rotate-45">
-                <ArrowUpRight size={16} />
-              </span>
-            </a>
-            <a
-              href="#program"
-              data-testid="hero-cta-secondary"
-              className="inline-flex items-center gap-2.5 px-7 py-4 rounded-full border border-clay-50/25 text-clay-50 font-medium backdrop-blur-sm hover:border-sand hover:text-sand transition-colors duration-400"
-            >
-              <GraduationCap size={18} />
-              Lihat Program
-            </a>
-          </div>
-        </div>
-
-        {/* Bottom stats strip */}
-        <div
-          className="mt-24 lg:mt-32 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 max-w-4xl animate-fade-up"
-          style={{ animationDelay: "620ms" }}
-          data-testid="hero-stats-strip"
-        >
-          {[
-            { v: "B", l: "Akreditasi Sekolah" },
-            { v: "634", l: "Peserta Didik Aktif" },
-            { v: "46", l: "Guru & Tenaga Pendidik" },
-            { v: "1985", l: "Tahun Berdiri" },
-          ].map((s, i) => (
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Left content */}
+          <div className="lg:col-span-7">
+            {/* Pill */}
             <div
-              key={i}
-              className="border-l border-clay-50/20 pl-4 md:pl-6"
+              className="inline-flex items-center gap-2 pl-2 pr-4 py-2 rounded-full bg-white/70 backdrop-blur-sm border border-cream-300 animate-fade-up"
+              style={{ animationDelay: "60ms" }}
             >
-              <p className="font-display text-3xl lg:text-4xl text-clay-50 leading-none">
-                {s.v}
-              </p>
-              <p className="mt-2 text-[11px] tracking-[0.14em] uppercase text-clay-200/75">
-                {s.l}
-              </p>
+              <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-coral text-white text-[11px] font-bold tracking-wide">
+                <Sparkles size={12} /> BARU
+              </span>
+              <span className="text-[12.5px] font-semibold text-ink">
+                PPDB 2026/2027 sudah dibuka
+              </span>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 right-10 hidden lg:flex flex-col items-center gap-3 text-clay-50/70">
-        <span className="text-[10px] tracking-[0.3em] uppercase rotate-90 origin-center whitespace-nowrap translate-y-6">
-          Scroll
-        </span>
-        <div className="w-px h-14 bg-gradient-to-b from-clay-50/60 to-transparent" />
+            {/* Headline */}
+            <h1
+              data-testid="hero-title"
+              className="font-display mt-7 text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-ink text-balance animate-fade-up"
+              style={{ animationDelay: "160ms", fontVariationSettings: '"SOFT" 100, "opsz" 144' }}
+            >
+              Tempat{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 italic text-coral-700">belajar</span>
+                <span
+                  aria-hidden
+                  className="absolute left-0 right-0 bottom-1 h-3 bg-honey/60 rounded-full -z-0"
+                />
+              </span>
+              {" "}yang{" "}
+              <span className="italic font-normal text-sky-600">hangat</span> untuk
+              tumbuh bersama teman.
+            </h1>
+
+            {/* Subheading */}
+            <p
+              className="mt-7 text-[17px] lg:text-lg leading-relaxed text-ink-soft max-w-xl animate-fade-up"
+              style={{ animationDelay: "280ms" }}
+              data-testid="hero-subtitle"
+            >
+              SMP Negeri 1 Sumber Jaya adalah rumah belajar 634 siswa di Lampung Barat —
+              dengan guru yang mendampingi, Kurikulum Merdeka, dan ruang untuk
+              mencoba, bertanya, dan berkarya.
+            </p>
+
+            {/* CTAs */}
+            <div
+              className="mt-9 flex flex-wrap items-center gap-4 animate-fade-up"
+              style={{ animationDelay: "400ms" }}
+            >
+              <a
+                href="#ppdb"
+                data-testid="hero-cta-primary"
+                className="group inline-flex items-center gap-3 pl-7 pr-2.5 py-2.5 rounded-full bg-ink text-cream-50 font-semibold hover:bg-coral transition-all duration-500 shadow-soft-lg"
+              >
+                Daftar Sekarang
+                <span className="w-11 h-11 rounded-full bg-coral flex items-center justify-center group-hover:bg-white group-hover:text-coral transition-all duration-500">
+                  <ArrowRight size={16} />
+                </span>
+              </a>
+              <a
+                href="#program"
+                data-testid="hero-cta-secondary"
+                className="inline-flex items-center gap-2 px-6 py-4 rounded-full border-2 border-ink/10 text-ink font-semibold hover:border-ink/30 hover:bg-white transition-all duration-300"
+              >
+                <GraduationCap size={18} /> Lihat Program
+              </a>
+            </div>
+
+            {/* Trust row */}
+            <div
+              className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 animate-fade-up"
+              style={{ animationDelay: "520ms" }}
+            >
+              <div className="flex -space-x-2">
+                {["bg-coral-300", "bg-mint-300", "bg-honey-300", "bg-sky-300"].map(
+                  (c, i) => (
+                    <span
+                      key={i}
+                      className={`w-8 h-8 rounded-full ${c} ring-2 ring-cream-50`}
+                    />
+                  )
+                )}
+              </div>
+              <p className="text-[13px] text-ink-soft">
+                <span className="font-bold text-ink">634 siswa</span> belajar bersama setiap hari
+              </p>
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-0.5 text-honey-600">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} size={14} fill="currentColor" />
+                  ))}
+                </div>
+                <span className="text-[13px] font-semibold text-ink">Akreditasi B</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right — image card collage */}
+          <div className="lg:col-span-5 relative" data-testid="hero-visual">
+            <div className="relative">
+              {/* Main image */}
+              <div className="relative rounded-[36px] overflow-hidden aspect-[4/5] bg-mint shadow-soft-lg">
+                <img
+                  src={HERO_IMG}
+                  alt="Siswa SMP"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent" />
+                {/* Floating tag on image */}
+                <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-sm shadow-soft">
+                  <span className="w-2 h-2 rounded-full bg-mint-600 animate-pulse" />
+                  <span className="text-[11.5px] font-bold text-ink tracking-wide">
+                    Kurikulum Merdeka
+                  </span>
+                </div>
+              </div>
+
+              {/* Floating stat card — top right */}
+              <div className="absolute -top-6 -right-4 lg:-right-8 bg-white rounded-2xl p-4 shadow-soft-lg border border-cream-200 animate-float max-w-[180px]">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-mint/25 flex items-center justify-center">
+                    <span className="font-display text-mint-600 font-bold">46</span>
+                  </div>
+                  <div>
+                    <p className="text-[10.5px] tracking-[0.14em] uppercase text-ink-faint font-semibold">
+                      Guru
+                    </p>
+                    <p className="text-[12px] font-semibold text-ink">Berdedikasi</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating card — bottom left */}
+              <div className="absolute -bottom-6 -left-4 lg:-left-10 bg-white rounded-2xl px-5 py-4 shadow-soft-lg border border-cream-200 animate-float" style={{ animationDelay: "1.5s" }}>
+                <p className="text-[10.5px] tracking-[0.14em] uppercase text-ink-faint font-semibold">
+                  Ekstrakurikuler
+                </p>
+                <p className="mt-1 font-display text-xl text-ink">12+ pilihan</p>
+                <div className="flex gap-1 mt-2">
+                  <span className="px-2 py-0.5 rounded-full bg-coral-50 text-coral-700 text-[10px] font-bold">
+                    Seni
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full bg-sky-50 text-sky-600 text-[10px] font-bold">
+                    Olahraga
+                  </span>
+                </div>
+              </div>
+
+              {/* Tiny badge floating */}
+              <div className="absolute top-1/2 -right-6 -translate-y-1/2 bg-honey rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-soft animate-float rotate-[-8deg]" style={{ animationDelay: "0.7s" }}>
+                <span className="text-[8px] uppercase tracking-wider font-bold text-ink">Sejak</span>
+                <span className="font-display text-sm font-bold text-ink leading-none mt-0.5">1985</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

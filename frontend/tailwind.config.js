@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Playfair Display"', "serif"],
-        sans: ["Manrope", "system-ui", "sans-serif"],
+        display: ['"Fraunces"', "Georgia", "serif"],
+        sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -47,33 +47,53 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        // Warm, earthy palette for SMP Negeri 1 Sumber Jaya
-        clay: {
-          50: "#FDFBF7",
-          100: "#F5F0E6",
-          200: "#EAE2D3",
-          300: "#D8CDBD",
-          400: "#B9A994",
-          500: "#8C7A62",
+        // Soft friendly palette — SMP Negeri 1 Sumber Jaya
+        cream: {
+          50: "#FEFCF7",
+          100: "#FBF7EE",
+          200: "#F4EFE3",
+          300: "#E8E1D0",
+          400: "#D0C5AC",
         },
-        terra: {
-          DEFAULT: "#B24C27",
-          dark: "#8C3A1D",
-          light: "#D26E48",
+        coral: {
+          50: "#FFF2EB",
+          100: "#FFE0D1",
+          300: "#FFB08A",
+          DEFAULT: "#FF8A5C",
+          600: "#E66A3A",
+          700: "#C6532A",
         },
-        forest: {
-          DEFAULT: "#3E4C35",
-          dark: "#2A3524",
-          light: "#5B6E50",
+        sky: {
+          50: "#EEF5FD",
+          100: "#D9E8F8",
+          300: "#9BC1E8",
+          DEFAULT: "#5B9BD5",
+          600: "#3F7FB8",
         },
-        sand: {
-          DEFAULT: "#E8A365",
-          dark: "#C98548",
+        mint: {
+          50: "#EFF7F1",
+          100: "#DCEEE0",
+          300: "#B5DDC0",
+          DEFAULT: "#8BC5A5",
+          600: "#62A57E",
+        },
+        honey: {
+          50: "#FFF8E5",
+          100: "#FFEFC1",
+          300: "#FFDB83",
+          DEFAULT: "#FFC75F",
+          600: "#E0A530",
         },
         ink: {
-          DEFAULT: "#2A231F",
-          soft: "#5C5046",
+          DEFAULT: "#1F2B47",
+          soft: "#5B6680",
+          faint: "#94A0B8",
         },
+      },
+      boxShadow: {
+        soft: "0 10px 40px -12px rgba(31, 43, 71, 0.08)",
+        "soft-lg": "0 24px 70px -24px rgba(31, 43, 71, 0.18)",
+        glow: "0 20px 60px -20px rgba(255, 138, 92, 0.45)",
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
@@ -82,13 +102,14 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        "fade-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+        "fade-in": { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
+        "blob-slow": {
+          "0%, 100%": { borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%" },
+          "50%": { borderRadius: "40% 60% 45% 55% / 60% 40% 60% 40%" },
         },
-        "slow-zoom": {
-          "0%": { transform: "scale(1)" },
-          "100%": { transform: "scale(1.08)" },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
         },
       },
       animation: {
@@ -96,7 +117,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both",
         "fade-in": "fade-in 1s ease-out both",
-        "slow-zoom": "slow-zoom 20s ease-out forwards",
+        "blob-slow": "blob-slow 16s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
       },
     },
   },

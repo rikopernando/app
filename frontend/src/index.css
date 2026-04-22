@@ -4,27 +4,27 @@
 
 @layer base {
     :root {
-        /* Warm earthy palette — SMP Negeri 1 Sumber Jaya */
-        --background: 36 45% 98%;           /* #FDFBF7 */
-        --foreground: 24 18% 14%;           /* #2A231F */
-        --card: 36 45% 98%;
-        --card-foreground: 24 18% 14%;
-        --popover: 36 45% 98%;
-        --popover-foreground: 24 18% 14%;
-        --primary: 16 65% 42%;              /* terra #B24C27 */
-        --primary-foreground: 36 45% 98%;
-        --secondary: 36 36% 93%;            /* cream */
-        --secondary-foreground: 24 18% 14%;
-        --muted: 36 30% 90%;
-        --muted-foreground: 24 14% 32%;     /* ink-soft */
-        --accent: 28 72% 65%;               /* sand */
-        --accent-foreground: 24 18% 14%;
-        --destructive: 0 70% 45%;
-        --destructive-foreground: 36 45% 98%;
-        --border: 36 26% 79%;               /* #D8CDBD */
-        --input: 36 26% 79%;
-        --ring: 16 65% 42%;
-        --radius: 0.875rem;
+        /* Soft friendly palette — SMP Negeri 1 Sumber Jaya */
+        --background: 41 60% 98%;            /* #FEFCF7 */
+        --foreground: 222 39% 20%;           /* #1F2B47 */
+        --card: 0 0% 100%;
+        --card-foreground: 222 39% 20%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 39% 20%;
+        --primary: 18 100% 68%;              /* coral #FF8A5C */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 210 58% 60%;            /* sky blue */
+        --secondary-foreground: 0 0% 100%;
+        --muted: 41 42% 93%;                 /* cream-100 */
+        --muted-foreground: 222 16% 43%;
+        --accent: 40 100% 69%;               /* honey */
+        --accent-foreground: 222 39% 20%;
+        --destructive: 0 70% 52%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 36 30% 86%;                /* cream-300 */
+        --input: 36 30% 86%;
+        --ring: 18 100% 68%;
+        --radius: 1rem;
     }
 }
 
@@ -37,40 +37,37 @@
     }
     body {
         @apply bg-background text-foreground;
-        font-family: "Manrope", system-ui, -apple-system, sans-serif;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-feature-settings: "ss01", "cv11";
     }
     ::selection {
-        background-color: #B24C27;
-        color: #FDFBF7;
+        background-color: #FF8A5C;
+        color: #FFFFFF;
     }
 }
 
 @layer utilities {
     .font-display {
-        font-family: "Playfair Display", Georgia, serif;
-        font-feature-settings: "liga", "kern";
+        font-family: "Fraunces", Georgia, serif;
+        font-variation-settings: "SOFT" 80, "WONK" 0, "opsz" 80;
+        font-feature-settings: "ss01", "ss02";
     }
-    .grain {
-        position: relative;
+    .font-display-wonky {
+        font-family: "Fraunces", Georgia, serif;
+        font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
     }
-    .grain::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-        opacity: 0.08;
-        mix-blend-mode: multiply;
+    .text-balance { text-wrap: balance; }
+    .text-pretty { text-wrap: pretty; }
+
+    .bg-dot-grid {
+        background-image: radial-gradient(#1F2B47 1px, transparent 1px);
+        background-size: 24px 24px;
     }
-    .mask-fade-b {
-        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-    }
-    .text-balance {
-        text-wrap: balance;
+    .bg-blob {
+        background: radial-gradient(circle at 30% 20%, #FFC75F 0%, transparent 40%),
+                    radial-gradient(circle at 70% 70%, #8BC5A5 0%, transparent 45%),
+                    radial-gradient(circle at 20% 80%, #FF8A5C 0%, transparent 40%);
     }
 }
 

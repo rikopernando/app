@@ -2,22 +2,29 @@ import { useEffect, useRef, useState } from "react";
 import {
   Users,
   GraduationCap,
-  BookMarked,
   DoorOpen,
   LayoutGrid,
   UserCheck,
+  UsersRound,
 } from "lucide-react";
 
 const STATS = [
-  { icon: Users, label: "Total Siswa", value: 634, suffix: "", note: "Tahun Ajaran 2025/2026", highlight: true },
-  { icon: UserCheck, label: "Siswa Laki-laki", value: 308, suffix: "", note: "48,6%" },
-  { icon: Users, label: "Siswa Perempuan", value: 326, suffix: "", note: "51,4%" },
-  { icon: GraduationCap, label: "Guru & Tenaga Pendidik", value: 46, suffix: "", note: "Rasio 1 : 14" },
-  { icon: DoorOpen, label: "Ruang Kelas", value: 15, suffix: "", note: "Kondisi baik" },
-  { icon: LayoutGrid, label: "Rombongan Belajar", value: 21, suffix: "", note: "Pagi · 6 Hari" },
+  { icon: UsersRound, label: "Total Siswa", value: 634, note: "TA 2025/2026", tone: "coral" },
+  { icon: UserCheck, label: "Siswa Laki-laki", value: 308, note: "48,6%", tone: "sky" },
+  { icon: Users, label: "Siswa Perempuan", value: 326, note: "51,4%", tone: "mint" },
+  { icon: GraduationCap, label: "Guru & Tenaga", value: 46, note: "Rasio 1:14", tone: "honey" },
+  { icon: DoorOpen, label: "Ruang Kelas", value: 15, note: "Kondisi baik", tone: "sky" },
+  { icon: LayoutGrid, label: "Rombel", value: 21, note: "Pagi · 6 Hari", tone: "mint" },
 ];
 
-const useCountUp = (target, start, duration = 1400) => {
+const TONE_STYLES = {
+  coral: { card: "bg-coral text-white", icon: "bg-white/20 text-white", accent: "text-honey" },
+  sky: { card: "bg-white", icon: "bg-sky-50 text-sky-600", accent: "text-sky-600" },
+  mint: { card: "bg-white", icon: "bg-mint-50 text-mint-600", accent: "text-mint-600" },
+  honey: { card: "bg-white", icon: "bg-honey-50 text-honey-600", accent: "text-honey-600" },
+};
+
+const useCountUp = (target, start, duration = 1300) => {
   const [val, setVal] = useState(0);
   useEffect(() => {
     if (!start) return;
@@ -35,45 +42,41 @@ const useCountUp = (target, start, duration = 1400) => {
   return val;
 };
 
-const StatCard = ({ icon: Icon, label, value, suffix, note, highlight, visible }) => {
+const StatCard = ({ icon: Icon, label, value, note, tone, visible }) => {
   const n = useCountUp(value, visible);
+  const t = TONE_STYLES[tone];
+  const isFilled = tone === "coral";
   return (
     <div
       data-testid={`stat-card-${label.toLowerCase().replace(/\s|&/g, "-")}`}
-      className={`relative p-7 lg:p-9 rounded-3xl border transition-all duration-500 hover:-translate-y-1 ${
-        highlight
-          ? "bg-terra text-clay-50 border-terra shadow-[0_30px_80px_-30px_rgba(178,76,39,0.6)]"
-          : "bg-clay-50 border-clay-300 hover:border-terra/40 hover:shadow-[0_20px_50px_-25px_rgba(42,35,31,0.2)]"
+      className={`group relative p-7 lg:p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-1 ${
+        isFilled
+          ? "border-transparent shadow-glow " + t.card
+          : "border-cream-200 hover:border-cream-300 shadow-soft hover:shadow-soft-lg " + t.card
       }`}
     >
       <div className="flex items-start justify-between">
-        <div
-          className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
-            highlight ? "bg-clay-50/15" : "bg-clay-100 border border-clay-300"
-          }`}
-        >
-          <Icon size={20} className={highlight ? "text-clay-50" : "text-terra"} />
+        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${t.icon}`}>
+          <Icon size={20} />
         </div>
         <span
-          className={`text-[10px] tracking-[0.2em] uppercase font-semibold ${
-            highlight ? "text-sand" : "text-ink-soft/70"
+          className={`text-[10.5px] tracking-[0.16em] uppercase font-bold ${
+            isFilled ? "text-white/80" : "text-ink-faint"
           }`}
         >
           {note}
         </span>
       </div>
-
       <p
         className={`font-display mt-10 text-5xl lg:text-6xl leading-none tracking-tight tabular-nums ${
-          highlight ? "text-clay-50" : "text-ink"
+          isFilled ? "text-white" : "text-ink"
         }`}
       >
         {n.toLocaleString("id-ID")}
-        <span className={highlight ? "text-sand" : "text-terra"}>{suffix}</span>
       </p>
       <p
-        className={`mt-4 text-[13.5px] font-medium tracking-wide ${
-          highlight ? "text-clay-200" : "text-ink-soft"
+        className={`mt-3 text-[14px] font-semibold ${
+          isFilled ? "text-white/90" : "text-ink-soft"
         }`}
       >
         {label}
@@ -107,35 +110,29 @@ export const Stats = () => {
       id="statistik"
       ref={ref}
       data-testid="stats-section"
-      className="relative py-24 lg:py-36 bg-clay-100/60 overflow-hidden"
+      className="relative py-24 lg:py-32 bg-cream-100/60"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
           <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-7">
-              <span className="h-px w-10 bg-terra" />
-              <span className="text-[11px] tracking-[0.24em] uppercase text-terra font-semibold">
-                Statistik Sekolah
-              </span>
-            </div>
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-600 text-[11px] tracking-[0.18em] uppercase font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-DEFAULT" /> Statistik Sekolah
+            </span>
             <h2
               data-testid="stats-heading"
-              className="font-display text-4xl sm:text-5xl lg:text-[56px] leading-[1.05] tracking-tight text-ink text-balance"
+              className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
-              Sekolah kami{" "}
-              <em className="italic font-normal text-terra">dalam angka.</em>
+              Sekolah kami dalam{" "}
+              <em className="italic font-normal text-coral">angka.</em>
             </h2>
           </div>
           <p className="max-w-md text-[15.5px] leading-relaxed text-ink-soft">
-            Data terkini kami — diverifikasi melalui Data Pokok Pendidikan
-            (Dapodik) Kemendikdasmen, tahun ajaran 2025/2026.
+            Data terverifikasi melalui Dapodik Kemendikdasmen — tahun ajaran 2025/2026.
           </p>
         </div>
 
-        {/* Grid — bento-ish */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
           data-testid="stats-grid"
         >
           {STATS.map((s) => (
@@ -143,14 +140,13 @@ export const Stats = () => {
           ))}
         </div>
 
-        {/* Footnote */}
-        <div className="mt-14 flex flex-col sm:flex-row items-start gap-3 sm:gap-6 text-[13px] text-ink-soft">
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[13px] text-ink-soft">
           <span className="flex items-center gap-2">
-            <BookMarked size={15} className="text-terra" /> NPSN 10803558
+            <span className="w-1.5 h-1.5 rounded-full bg-coral" /> NPSN 10803558
           </span>
-          <span className="hidden sm:inline text-clay-300">·</span>
+          <span className="hidden sm:inline text-cream-400">·</span>
           <span>Luas Tanah: 6.460 m²</span>
-          <span className="hidden sm:inline text-clay-300">·</span>
+          <span className="hidden sm:inline text-cream-400">·</span>
           <span>Status: Sekolah Negeri</span>
         </div>
       </div>

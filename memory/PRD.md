@@ -3,66 +3,61 @@
 ## Original Problem Statement
 > Build me a landing page for school website
 
-## User Choices (2026-04-21)
+## User Choices
 - **School type**: Junior High School (SMP)
 - **School name**: SMP N 1 Sumber Jaya (SMP Negeri 1 Sumber Jaya, Lampung Barat, Indonesia)
-- **Tagline**: Agent-generated ("Menumbuhkan generasi yang cerdas, berakhlak, dan berdaya saing.")
-- **Sections required**: Hero, About, Visi Misi, Stats, Programs, Footer
-- **Type**: Landing page only (no backend, static)
-- **Design**: Warm tones (implemented as "Organic & Earthy" — terracotta + cream + forest green)
 - **Language**: Indonesian (Bahasa Indonesia)
+- **Type**: Landing page only (no backend, static)
+
+## Design Evolution
+- **v1 (2026-04-21)**: "Organic & Earthy" — terracotta + cream + forest, Playfair Display + Manrope
+- **v2 (2026-04-22)**: "Soft & Friendly" — cream + coral + sky + mint + honey, Fraunces + Plus Jakarta Sans
+  → chosen to feel more modern, welcoming, and appropriate for SMP students & their parents
 
 ## Architecture
-- **Stack**: React (CRA) + Tailwind CSS + lucide-react icons — **frontend only**, no backend, no database
-- **Design tokens**: Custom Tailwind palette (`clay`, `terra`, `forest`, `sand`, `ink`); Playfair Display (headings) + Manrope (body)
-- **Components**: `/app/frontend/src/components/sections/` → Navbar, Hero, About, VisiMisi, Stats, Programs, Footer
-- **Entry**: `/app/frontend/src/App.js` composes `<Landing />` under a single `/` route
+- **Stack**: React (CRA) + Tailwind CSS + lucide-react icons + Sonner (toasts) — **frontend only**
+- **Design tokens (v2)**: `cream` (base), `coral` (primary), `sky` (secondary), `mint` + `honey` (accents), `ink` (warm navy)
+- **Fonts**: Fraunces (variable serif, SOFT + WONK axes) headings + Plus Jakarta Sans body
+- **Components**: `/app/frontend/src/components/sections/` → Navbar, Hero, About, Stats, VisiMisi, Programs, PPDB, News, Achievements, Footer
+- **Entry**: `/app/frontend/src/App.js` composes `<Landing />` under `/` route + mounts Sonner `<Toaster>`
 
 ## User Personas
-- **Orang tua calon siswa** (prospective parents) evaluating a public junior high in Sumber Jaya
-- **Calon siswa** (prospective students) getting first impression of school culture
-- **Alumni & komunitas** (alumni & community) looking up school info and contact
+- **Orang tua calon siswa** — evaluating a public junior high, wants clarity on PPDB, akreditasi, prestasi
+- **Calon siswa SMP** — first impression of school culture & extracurricular vibe
+- **Alumni & komunitas** — school news, achievements, contact info
 
-## Core Requirements (Static)
-- Clear hero with school identity, accreditation (B), NPSN (10803558), and CTAs
-- About section with authentic school data (Kepala Sekolah, Kurikulum, etc.)
-- Vision & mission copy in Indonesian
-- Verifiable school statistics (634 siswa, 46 guru, 15 ruang kelas, 21 rombel)
-- Programs/extracurricular overview
-- Complete contact footer (address, phone, email, hours, socials)
-
-## What's Been Implemented (2026-04-21)
-- ✅ Sticky glassmorphism navbar + mobile hamburger menu
-- ✅ Hero with background image, animated slow-zoom, gradient overlay, headline with italic accent, two CTAs, 4-metric stats strip
-- ✅ About section with editorial image, floating accreditation card, dot-grid decoration, 4 info badges
-- ✅ Visi & Misi section (dark theme) with large background wordmark, Visi card + Misi list (5 items)
-- ✅ Stats section with IntersectionObserver-triggered count-up animation on 6 cards (featured terra card)
-- ✅ Programs bento grid: 1 featured dark card (Kurikulum Merdeka) + 5 supporting cards
-- ✅ Footer with giant wordmark CTA, contact info, social links, nav links, copyright
-- ✅ Warm earthy palette end-to-end, Playfair Display + Manrope fonts loaded
-- ✅ Full `data-testid` coverage on all interactive + informational elements
-- ✅ Testing agent: 100% frontend pass, zero console errors
+## What's Been Implemented
+### 2026-04-21 (v1)
+- 7 sections, warm earthy palette, verified 100% by testing agent
+### 2026-04-22 (v2 — redesign + 3 new sections)
+- ✅ Full redesign: soft friendly modern palette, Fraunces+PJS fonts, rounded-3xl cards, soft shadows, decorative blobs
+- ✅ Navbar refreshed with pill nav + Daftar PPDB CTA
+- ✅ Hero redesigned as light soft layout with image collage + 3 floating cards (46 Guru, 12+ Ekstrakurikuler, Sejak 1985)
+- ✅ About + Stats + Visi Misi + Programs restyled with soft palette
+- ✅ **NEW — PPDB (#ppdb)**: dark navy feature section with 4-step timeline (10 Mei → 10 Jun), 6-item syarat checklist, coral download CTA that triggers Sonner success toast
+- ✅ **NEW — Berita/News (#berita)**: 1 featured article (PPDB 2026/2027) + 3 side articles (Hari Kartini, Workshop Kurikulum, Ramadhan)
+- ✅ **NEW — Galeri Prestasi (#prestasi)**: bento grid with featured Juara 1 card + 4 achievements + tally strip (47 penghargaan · 18 Akademik / 14 Olahraga / 10 Seni / 5 Karakter)
+- ✅ Footer updated with new palette + new Jelajahi links
+- ✅ Testing agent: **100% pass**, zero console errors, Sonner toast verified working
 
 ## Prioritized Backlog
-### P1 — High value, low effort
-- [ ] Real school photo gallery (currently using stock Pexels images)
-- [ ] Lazy-load hero/program images for faster first paint
-- [ ] Host images locally instead of Pexels CDN for production resilience
+### P1
+- [ ] Replace Pexels stock photos with real school photos
+- [ ] Serve actual PPDB formulir PDF (currently toast-only placeholder)
+- [ ] Lazy-load hero/program/news images
 
-### P2 — Enhancements
-- [ ] News / Berita section (pengumuman sekolah)
+### P2
 - [ ] Faculty / Guru highlight section with photos
-- [ ] PPDB (Penerimaan Peserta Didik Baru) enrollment info & timeline
-- [ ] Working contact form with backend (MongoDB + email) — currently only static contact info
-- [ ] Embedded Google Maps for school location
-- [ ] Image carousel showing school facilities
-- [ ] Multi-language toggle (ID / EN)
-- [ ] School achievements (Prestasi) showcase
+- [ ] Embedded Google Maps of school location
+- [ ] Working contact/enquiry form with backend (MongoDB)
+- [ ] News detail pages (currently "Baca selengkapnya" is anchor-only)
+- [ ] Achievements detail modal / expanded view
+- [ ] Multi-language toggle (ID/EN)
 
-### P0 — None outstanding
-(No blocking issues — MVP is complete and verified.)
+### P0
+(No blocking issues.)
 
-## Next Tasks (if user continues)
-1. Replace stock imagery with real school photos
-2. Add PPDB / enrollment section (highly relevant for parents visiting in admission season)
-3. Add working contact form backed by MongoDB for parent inquiries
+## Next Tasks
+1. Upload real school photos + real PPDB PDF
+2. Add dedicated Kepala Sekolah / Guru profile section
+3. Optional: activate working contact form with backend to capture parent enquiries

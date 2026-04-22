@@ -17,10 +17,10 @@ const TIMELINE = [
 ];
 
 const TONE = {
-  coral: { bg: "bg-coral-50", text: "text-coral-700", dot: "bg-coral" },
-  sky: { bg: "bg-sky-50", text: "text-sky-600", dot: "bg-sky" },
-  mint: { bg: "bg-mint-50", text: "text-mint-600", dot: "bg-mint" },
-  honey: { bg: "bg-honey-50", text: "text-honey-600", dot: "bg-honey" },
+  coral: { bg: "bg-coral-50", text: "text-coral-700", sub: "text-coral-700/70", dot: "bg-coral" },
+  sky: { bg: "bg-sky-50", text: "text-sky-600", sub: "text-sky-600/70", dot: "bg-sky" },
+  mint: { bg: "bg-mint-50", text: "text-mint-600", sub: "text-mint-600/70", dot: "bg-mint" },
+  honey: { bg: "bg-honey-50", text: "text-honey-600", sub: "text-honey-600/70", dot: "bg-honey" },
 };
 
 const REQUIREMENTS = [
@@ -105,7 +105,7 @@ export const PPDB = () => {
                         <span className={`font-display text-[14px] font-bold ${tone.text}`}>
                           {t.date}
                         </span>
-                        <span className={`text-[9px] tracking-wide font-bold ${tone.text}/70`}>
+                        <span className={`text-[9px] tracking-wide font-bold ${tone.sub}`}>
                           {t.month}
                         </span>
                       </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 import { SITE } from "@/lib/site";
+import { organizationSchema, websiteSchema, ldJson } from "@/lib/json-ld";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -63,6 +64,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="id" className={`${bricolage.variable} ${jakarta.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: ldJson(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: ldJson(websiteSchema) }}
+        />
+      </head>
       <body className="bg-cream-50 text-ink antialiased">
         {children}
         <Toaster

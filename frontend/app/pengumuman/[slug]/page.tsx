@@ -5,6 +5,8 @@ import { ArrowLeft, Calendar, Megaphone } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PENGUMUMAN, getPengumumanBySlug } from "@/lib/data";
+import { announcementSchema, breadcrumbSchema, ldJson } from "@/lib/json-ld";
+import { SITE } from "@/lib/site";
 
 export async function generateStaticParams() {
   return PENGUMUMAN.map((p) => ({ slug: p.slug }));
@@ -46,8 +48,23 @@ export default async function PengumumanDetailPage({
   const p = getPengumumanBySlug(slug);
   if (!p) notFound();
 
+  const url = SITE.url.replace(/\/$/, "");
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Beranda", url: `${url}/` },
+    { name: "Pengumuman", url: `${url}/pengumuman` },
+    { name: p.title, url: `${url}/pengumuman/${p.slug}` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: ldJson(announcementSchema(p)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: ldJson(breadcrumbs) }}
+      />
       <Navbar />
       <main data-testid="pengumuman-detail-page" className="min-h-screen bg-cream-50 pt-32 pb-20 lg:pt-36">
         <article className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-10">

@@ -6,6 +6,8 @@ import { ArrowLeft, Calendar, User, Share2 } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { NEWS, getNewsBySlug } from "@/lib/data";
+import { newsArticleSchema, breadcrumbSchema, ldJson } from "@/lib/json-ld";
+import { SITE } from "@/lib/site";
 
 const CATEGORY_COLORS: Record<string, string> = {
   Pengumuman: "bg-coral-50 text-coral-700",
@@ -55,10 +57,25 @@ export default async function BeritaDetailPage({
   const article = getNewsBySlug(slug);
   if (!article) notFound();
 
+  const url = SITE.url.replace(/\/$/, "");
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Beranda", url: `${url}/` },
+    { name: "Berita", url: `${url}/berita` },
+    { name: article.title, url: `${url}/berita/${article.slug}` },
+  ]);
+
   const related = NEWS.filter((n) => n.slug !== slug).slice(0, 3);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: ldJson(newsArticleSchema(article)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: ldJson(breadcrumbs) }}
+      />
       <Navbar />
       <main data-testid="berita-detail-page" className="min-h-screen bg-cream-50 pt-32 pb-20 lg:pt-36">
         <article className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-10">

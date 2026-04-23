@@ -8,7 +8,7 @@ import { getPengumuman, getPengumumanBySlug } from "@/lib/data";
 import { announcementSchema, breadcrumbSchema, ldJson } from "@/lib/json-ld";
 import { SITE } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {

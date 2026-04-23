@@ -9,7 +9,7 @@ import { getNews, getNewsBySlug } from "@/lib/data";
 import { newsArticleSchema, breadcrumbSchema, ldJson } from "@/lib/json-ld";
 import { SITE } from "@/lib/site";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 export const dynamicParams = true;
 
 const CATEGORY_COLORS: Record<string, string> = {

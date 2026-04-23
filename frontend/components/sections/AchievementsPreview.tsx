@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Trophy, Medal, Award, ArrowUpRight, type LucideIcon } from "lucide-react";
-import { ACHIEVEMENTS } from "@/lib/data";
+import { getAchievements } from "@/lib/data";
 
 const COLOR_MAP = ["coral", "sky", "honey", "mint", "sky"] as const;
 type Color = (typeof COLOR_MAP)[number];
@@ -21,8 +21,9 @@ const RANK_ICON: Record<string, LucideIcon> = {
   "Harapan 2": Award,
 };
 
-export const AchievementsPreview = () => {
-  const preview = ACHIEVEMENTS.slice(0, 5);
+export async function AchievementsPreview() {
+  const achievements = await getAchievements();
+  const preview = achievements.slice(0, 5);
 
   return (
     <section id="prestasi" data-testid="achievements-section" className="relative py-24 lg:py-32 bg-cream-100/40 overflow-hidden">
@@ -167,4 +168,4 @@ export const AchievementsPreview = () => {
       </div>
     </section>
   );
-};
+}

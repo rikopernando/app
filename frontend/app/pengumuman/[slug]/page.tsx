@@ -4,12 +4,20 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Megaphone } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { PENGUMUMAN, getPengumumanBySlug } from "@/lib/data";
+import { getPengumuman, getPengumumanBySlug } from "@/lib/data";
 import { announcementSchema, breadcrumbSchema, ldJson } from "@/lib/json-ld";
 import { SITE } from "@/lib/site";
 
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  return PENGUMUMAN.map((p) => ({ slug: p.slug }));
+  try {
+    const pengumuman = await getPengumuman();
+    return pengumuman.map((p) => ({ slug: p.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -18,7 +26,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const p = getPengumumanBySlug(slug);
+  const p = await getPengumumanBySlug(slug);
   if (!p) return { title: "Pengumuman tidak ditemukan" };
   return {
     title: p.title,
@@ -45,7 +53,7 @@ export default async function PengumumanDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const p = getPengumumanBySlug(slug);
+  const p = await getPengumumanBySlug(slug);
   if (!p) notFound();
 
   const url = SITE.url.replace(/\/$/, "");

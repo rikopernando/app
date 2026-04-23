@@ -3,7 +3,9 @@ import Link from "next/link";
 import { ArrowUpRight, Calendar, Megaphone, AlertTriangle, Clock } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { PENGUMUMAN } from "@/lib/data";
+import { getPengumuman } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Pengumuman Sekolah",
@@ -22,7 +24,9 @@ const URGENCY: Record<string, { bg: string; text: string; icon: typeof AlertTria
   Umum: { bg: "bg-sky-50", text: "text-sky-600", icon: Megaphone },
 };
 
-export default function PengumumanPage() {
+export default async function PengumumanPage() {
+  const pengumuman = await getPengumuman();
+
   return (
     <>
       <Navbar />
@@ -45,7 +49,7 @@ export default function PengumumanPage() {
           </div>
 
           <div className="space-y-5">
-            {PENGUMUMAN.map((p) => {
+            {pengumuman.map((p) => {
               const u = URGENCY[p.urgency];
               const UIcon = u.icon;
               return (

@@ -3,7 +3,9 @@ import Image from "next/image";
 import { Trophy, Medal, Award, type LucideIcon } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { ACHIEVEMENTS } from "@/lib/data";
+import { getAchievements } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Galeri Prestasi",
@@ -33,7 +35,9 @@ const CATEGORY_COLORS: Record<string, { bg: string; text: string; chip: string }
   Lingkungan: { bg: "bg-mint-50", text: "text-mint-600", chip: "bg-mint text-white" },
 };
 
-export default function PrestasiPage() {
+export default async function PrestasiPage() {
+  const achievements = await getAchievements();
+
   return (
     <>
       <Navbar />
@@ -94,7 +98,7 @@ export default function PrestasiPage() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7"
             data-testid="prestasi-grid"
           >
-            {ACHIEVEMENTS.map((a, i) => {
+            {achievements.map((a, i) => {
               const c = CATEGORY_COLORS[a.category] ?? CATEGORY_COLORS.Akademik;
               const IconRank = RANK_ICON[a.rank] || Award;
 

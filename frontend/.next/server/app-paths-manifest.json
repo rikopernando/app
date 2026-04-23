@@ -1,8 +1,0 @@
-{
-  "/berita/page": "app/berita/page.js",
-  "/prestasi/page": "app/prestasi/page.js",
-  "/page": "app/page.js",
-  "/berita/[slug]/page": "app/berita/[slug]/page.js",
-  "/pengumuman/[slug]/page": "app/pengumuman/[slug]/page.js",
-  "/pengumuman/page": "app/pengumuman/page.js"
-}

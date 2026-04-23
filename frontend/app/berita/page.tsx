@@ -4,7 +4,9 @@ import Image from "next/image";
 import { Calendar, ArrowUpRight, Newspaper } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { NEWS } from "@/lib/data";
+import { getNews } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Berita & Kegiatan",
@@ -24,7 +26,9 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Info Sekolah": "bg-honey-50 text-honey-600",
 };
 
-export default function BeritaPage() {
+export default async function BeritaPage() {
+  const news = await getNews();
+
   return (
     <>
       <Navbar />
@@ -49,7 +53,7 @@ export default function BeritaPage() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {NEWS.map((n) => (
+            {news.map((n) => (
               <Link
                 key={n.slug}
                 href={`/berita/${n.slug}`}

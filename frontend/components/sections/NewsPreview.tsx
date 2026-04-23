@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Calendar } from "lucide-react";
-import { NEWS } from "@/lib/data";
+import { getNews } from "@/lib/data";
 
 const CATEGORY_COLORS: Record<string, string> = {
   Pengumuman: "bg-coral-50 text-coral-700",
@@ -10,9 +10,12 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Info Sekolah": "bg-honey-50 text-honey-600",
 };
 
-export const NewsPreview = () => {
-  const featured = NEWS.find((n) => n.featured) ?? NEWS[0];
-  const rest = NEWS.filter((n) => n.slug !== featured.slug).slice(0, 3);
+export async function NewsPreview() {
+  const news = await getNews();
+  if (news.length === 0) return null;
+
+  const featured = news.find((n) => n.featured) ?? news[0];
+  const rest = news.filter((n) => n.slug !== featured.slug).slice(0, 3);
 
   return (
     <section id="berita" data-testid="news-section" className="relative py-24 lg:py-32 bg-cream-50">
@@ -113,4 +116,4 @@ export const NewsPreview = () => {
       </div>
     </section>
   );
-};
+}

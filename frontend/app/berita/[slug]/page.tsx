@@ -5,9 +5,12 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, User, Share2 } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { NEWS, getNewsBySlug } from "@/lib/data";
+import { getNews, getNewsBySlug } from "@/lib/data";
 import { newsArticleSchema, breadcrumbSchema, ldJson } from "@/lib/json-ld";
 import { SITE } from "@/lib/site";
+
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
 
 const CATEGORY_COLORS: Record<string, string> = {
   Pengumuman: "bg-coral-50 text-coral-700",
@@ -17,7 +20,12 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export async function generateStaticParams() {
-  return NEWS.map((n) => ({ slug: n.slug }));
+  try {
+    const news = await getNews();
+    return news.map((n) => ({ slug: n.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -26,7 +34,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const article = getNewsBySlug(slug);
+  const article = await getNewsBySlug(slug);
   if (!article) return { title: "Berita tidak ditemukan" };
   return {
     title: article.title,
@@ -54,7 +62,10 @@ export default async function BeritaDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = getNewsBySlug(slug);
+  const [article, allNews] = await Promise.all([
+    getNewsBySlug(slug),
+    getNews(),
+  ]);
   if (!article) notFound();
 
   const url = SITE.url.replace(/\/$/, "");
@@ -64,7 +75,7 @@ export default async function BeritaDetailPage({
     { name: article.title, url: `${url}/berita/${article.slug}` },
   ]);
 
-  const related = NEWS.filter((n) => n.slug !== slug).slice(0, 3);
+  const related = allNews.filter((n) => n.slug !== slug).slice(0, 3);
 
   return (
     <>

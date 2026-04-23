@@ -4,10 +4,10 @@ import { ArrowUpRight, Calendar } from "lucide-react";
 import { getNews } from "@/lib/data";
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Pengumuman: "bg-coral-50 text-coral-700",
+  Pengumuman: "bg-navy-50 text-navy-700",
   Kegiatan: "bg-mint-50 text-mint-600",
   Akademik: "bg-sky-50 text-sky-600",
-  "Info Sekolah": "bg-honey-50 text-honey-600",
+  "Info Sekolah": "bg-gold-50 text-gold-600",
 };
 
 export async function NewsPreview() {
@@ -40,7 +40,7 @@ export async function NewsPreview() {
             <Link
               href="/berita"
               data-testid="news-view-all"
-              className="inline-flex items-center gap-2 text-coral font-bold text-[13.5px] group"
+              className="inline-flex items-center gap-2 text-navy font-bold text-[13.5px] group"
             >
               Lihat semua berita
               <ArrowUpRight size={15} className="transition-transform duration-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -74,7 +74,7 @@ export async function NewsPreview() {
                 {featured.title}
               </h3>
               <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{featured.excerpt}</p>
-              <span className="mt-6 inline-flex items-center gap-2 text-coral font-bold text-[13.5px] group/cta">
+              <span className="mt-6 inline-flex items-center gap-2 text-navy font-bold text-[13.5px] group/cta">
                 Baca selengkapnya
                 <ArrowUpRight size={15} className="transition-transform duration-400 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
               </span>
@@ -105,7 +105,7 @@ export async function NewsPreview() {
                     </span>
                     <span className="text-[11.5px] text-ink-faint font-semibold">{n.dateLabel}</span>
                   </div>
-                  <h4 className="font-display mt-2 text-[17px] leading-[1.25] text-ink text-pretty group-hover:text-coral transition-colors duration-300">
+                  <h4 className="font-display mt-2 text-[17px] leading-[1.25] text-ink text-pretty group-hover:text-navy transition-colors duration-300">
                     {n.title}
                   </h4>
                 </div>

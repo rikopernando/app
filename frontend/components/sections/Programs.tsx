@@ -31,9 +31,9 @@ const PROGRAMS: Program[] = [
     img: "https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=900",
     featured: true,
   },
-  { icon: Tent, tag: "Karakter", title: "Pramuka & Kepanduan", desc: "Pembentukan karakter, kemandirian, kepemimpinan.", span: "lg:col-span-3", color: "bg-coral-50 text-coral-700" },
+  { icon: Tent, tag: "Karakter", title: "Pramuka & Kepanduan", desc: "Pembentukan karakter, kemandirian, kepemimpinan.", span: "lg:col-span-3", color: "bg-navy-50 text-navy-700" },
   { icon: Palette, tag: "Seni", title: "Seni & Budaya Lokal", desc: "Tari, musik tradisional, kearifan Lampung Barat.", span: "lg:col-span-3", color: "bg-mint-50 text-mint-600" },
-  { icon: Trophy, tag: "Prestasi", title: "Olahraga", desc: "Voli, sepak bola, atletik, pencak silat.", span: "lg:col-span-2", color: "bg-honey-50 text-honey-600" },
+  { icon: Trophy, tag: "Prestasi", title: "Olahraga", desc: "Voli, sepak bola, atletik, pencak silat.", span: "lg:col-span-2", color: "bg-gold-50 text-gold-600" },
   { icon: Sprout, tag: "Lingkungan", title: "Adiwiyata", desc: "Budaya hijau & kepedulian ekosistem sekolah.", span: "lg:col-span-2", color: "bg-mint-50 text-mint-600" },
   { icon: MonitorSmartphone, tag: "Digital", title: "Literasi TIK", desc: "Teknologi, keamanan digital, kolaborasi daring.", span: "lg:col-span-2", color: "bg-sky-50 text-sky-600" },
 ];
@@ -44,15 +44,15 @@ export const Programs = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14 items-end">
           <div className="lg:col-span-7">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-honey-50 text-honey-600 text-[11px] tracking-[0.18em] uppercase font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-honey" /> Program & Ekstrakurikuler
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 text-gold-600 text-[11px] tracking-[0.18em] uppercase font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold" /> Program & Ekstrakurikuler
             </span>
             <h2
               data-testid="programs-heading"
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Belajar lebih dari{" "}
-              <em className="not-italic font-semibold text-coral">sekadar kelas.</em>
+              <em className="not-italic font-semibold text-navy">sekadar kelas.</em>
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15.5px] leading-relaxed text-ink-soft max-w-md lg:ml-auto">
@@ -83,7 +83,7 @@ export const Programs = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/60 to-ink/20" />
                   <div className="relative z-10 h-full p-8 lg:p-10 flex flex-col justify-between min-h-[460px]">
                     <div className="flex items-start justify-between">
-                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-[10.5px] tracking-[0.16em] uppercase font-bold text-honey-300">
+                      <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-[10.5px] tracking-[0.16em] uppercase font-bold text-gold-300">
                         {p.tag}
                       </span>
                       <div className="w-12 h-12 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
@@ -97,7 +97,7 @@ export const Programs = () => {
                       <p className="mt-4 text-[14.5px] leading-relaxed text-white/85 max-w-md">
                         {p.desc}
                       </p>
-                      <div className="mt-7 inline-flex items-center gap-2 text-honey-300 text-[13px] font-bold tracking-wide">
+                      <div className="mt-7 inline-flex items-center gap-2 text-gold-300 text-[13px] font-bold tracking-wide">
                         Pelajari kurikulum
                         <ArrowUpRight size={15} className="transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </div>

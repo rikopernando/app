@@ -5,10 +5,10 @@ const ABOUT_IMG =
   "https://images.pexels.com/photos/5905445/pexels-photo-5905445.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const BADGES = [
-  { icon: Award, label: "Akreditasi", value: "B", color: "bg-coral-50 text-coral-700" },
+  { icon: Award, label: "Akreditasi", value: "B", color: "bg-navy-50 text-navy-700" },
   { icon: Hash, label: "NPSN", value: "10803558", color: "bg-sky-50 text-sky-600" },
   { icon: BookOpen, label: "Kurikulum", value: "Merdeka", color: "bg-mint-50 text-mint-600" },
-  { icon: UserRound, label: "Kepala Sekolah", value: "Adi Lesmana", color: "bg-honey-50 text-honey-600" },
+  { icon: UserRound, label: "Kepala Sekolah", value: "Adi Lesmana", color: "bg-gold-50 text-gold-600" },
 ];
 
 export const About = () => {
@@ -32,8 +32,8 @@ export const About = () => {
               className="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-2xl p-5 shadow-soft-lg border border-cream-200 max-w-[220px]"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-coral/15 flex items-center justify-center">
-                  <Heart className="text-coral" size={18} fill="currentColor" />
+                <div className="w-10 h-10 rounded-xl bg-navy/15 flex items-center justify-center">
+                  <Heart className="text-navy" size={18} fill="currentColor" />
                 </div>
                 <div>
                   <p className="text-[10.5px] uppercase tracking-[0.16em] text-ink-faint font-semibold">
@@ -50,15 +50,15 @@ export const About = () => {
           </div>
 
           <div className="lg:col-span-7">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-coral-50 text-coral-700 text-[11px] tracking-[0.18em] uppercase font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-coral" /> Tentang Kami
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-50 text-navy-700 text-[11px] tracking-[0.18em] uppercase font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-navy" /> Tentang Kami
             </span>
             <h2
               data-testid="about-heading"
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Sekolah yang hadir seperti{" "}
-              <em className="not-italic font-semibold text-coral">rumah kedua</em> bagi anakmu.
+              <em className="not-italic font-semibold text-navy">rumah kedua</em> bagi anakmu.
             </h2>
 
             <div className="mt-7 space-y-5 text-[16.5px] leading-relaxed text-ink-soft max-w-2xl">

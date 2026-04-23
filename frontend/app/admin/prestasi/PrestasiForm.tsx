@@ -34,7 +34,7 @@ export function PrestasiForm({ action, defaultValues }: Props) {
           <select
             name="rank"
             defaultValue={defaultValues?.rank ?? "Juara 1"}
-            className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral"
+            className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy"
           >
             {RANKS.map((r) => <option key={r} value={r}>{r}</option>)}
           </select>
@@ -44,7 +44,7 @@ export function PrestasiForm({ action, defaultValues }: Props) {
           <select
             name="level"
             defaultValue={defaultValues?.level ?? "Kabupaten"}
-            className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral"
+            className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy"
           >
             {LEVELS.map((l) => <option key={l} value={l}>{l}</option>)}
           </select>
@@ -58,14 +58,14 @@ export function PrestasiForm({ action, defaultValues }: Props) {
       <Field label="URL Gambar (opsional)" name="image" defaultValue={defaultValues?.image} />
 
       {error && (
-        <p className="text-[13px] text-coral-700 bg-coral-50 px-4 py-2.5 rounded-xl">{error}</p>
+        <p className="text-[13px] text-navy-700 bg-navy-50 px-4 py-2.5 rounded-xl">{error}</p>
       )}
 
       <div className="flex gap-3 pt-2">
         <button
           type="submit"
           disabled={pending}
-          className="px-6 py-2.5 rounded-xl bg-ink text-cream-50 font-semibold text-[13.5px] hover:bg-coral transition-colors disabled:opacity-60"
+          className="px-6 py-2.5 rounded-xl bg-ink text-cream-50 font-semibold text-[13.5px] hover:bg-navy transition-colors disabled:opacity-60"
         >
           {pending ? "Menyimpan..." : "Simpan"}
         </button>
@@ -93,7 +93,7 @@ function Field({
         required={required}
         defaultValue={defaultValue}
         placeholder={placeholder}
-        className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral transition"
+        className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition"
       />
     </div>
   );

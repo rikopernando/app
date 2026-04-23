@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 };
 
 const URGENCY: Record<string, { bg: string; text: string; icon: typeof AlertTriangle }> = {
-  Penting: { bg: "bg-coral-50", text: "text-coral-700", icon: AlertTriangle },
-  Segera: { bg: "bg-honey-50", text: "text-honey-600", icon: Clock },
+  Penting: { bg: "bg-navy-50", text: "text-navy-700", icon: AlertTriangle },
+  Segera: { bg: "bg-gold-50", text: "text-gold-600", icon: Clock },
   Umum: { bg: "bg-sky-50", text: "text-sky-600", icon: Megaphone },
 };
 
@@ -33,7 +33,7 @@ export default async function PengumumanPage() {
       <main data-testid="pengumuman-page" className="min-h-screen bg-cream-50 pt-32 pb-20 lg:pt-40">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 lg:px-10">
           <div className="max-w-3xl mb-14">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-coral-50 text-coral-700 text-[11px] tracking-[0.18em] uppercase font-bold">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-50 text-navy-700 text-[11px] tracking-[0.18em] uppercase font-bold">
               <Megaphone size={12} /> Pengumuman Resmi
             </span>
             <h1
@@ -41,7 +41,7 @@ export default async function PengumumanPage() {
               className="font-display mt-6 text-5xl sm:text-6xl lg:text-[72px] leading-[1.02] tracking-tight text-ink text-balance"
             >
               Pengumuman{" "}
-              <em className="not-italic font-semibold text-coral">sekolah.</em>
+              <em className="not-italic font-semibold text-navy">sekolah.</em>
             </h1>
             <p className="mt-6 text-[17px] leading-relaxed text-ink-soft max-w-2xl">
               Informasi resmi dari SMPN 1 Sumber Jaya untuk siswa, orang tua, dan wali — mulai dari jadwal ujian, rapat komite, hingga pengumuman libur sekolah.
@@ -71,14 +71,14 @@ export default async function PengumumanPage() {
                         <Calendar size={12} /> {p.dateLabel}
                       </span>
                     </div>
-                    <h3 className="font-display mt-3 text-xl lg:text-2xl leading-[1.2] text-ink text-balance group-hover:text-coral transition-colors duration-300">
+                    <h3 className="font-display mt-3 text-xl lg:text-2xl leading-[1.2] text-ink text-balance group-hover:text-navy transition-colors duration-300">
                       {p.title}
                     </h3>
                     <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">{p.summary}</p>
                   </div>
                   <ArrowUpRight
                     size={18}
-                    className="flex-shrink-0 mt-1 text-ink-faint group-hover:text-coral group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-400"
+                    className="flex-shrink-0 mt-1 text-ink-faint group-hover:text-navy group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-400"
                   />
                 </Link>
               );

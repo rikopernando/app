@@ -12,7 +12,7 @@ export const VisiMisi = () => {
   return (
     <section id="visi-misi" data-testid="visi-misi-section" className="relative py-24 lg:py-32 bg-cream-50 overflow-hidden">
       <div className="absolute top-20 right-10 w-48 h-48 bg-mint/25 blur-3xl rounded-full" aria-hidden />
-      <div className="absolute bottom-20 -left-10 w-56 h-56 bg-coral/20 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute bottom-20 -left-10 w-56 h-56 bg-navy/20 blur-3xl rounded-full" aria-hidden />
 
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
@@ -24,7 +24,7 @@ export const VisiMisi = () => {
             className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
           >
             Dibangun di atas <em className="not-italic font-semibold text-mint-600">nilai</em>,
-            diarahkan oleh <em className="not-italic font-semibold text-coral">tujuan</em>.
+            diarahkan oleh <em className="not-italic font-semibold text-navy">tujuan</em>.
           </h2>
         </div>
 
@@ -44,9 +44,9 @@ export const VisiMisi = () => {
 
               <p className="font-display text-2xl sm:text-3xl leading-[1.25] text-white text-pretty">
                 “Terwujudnya peserta didik yang{" "}
-                <span className="text-honey-300 font-semibold">beriman</span>,{" "}
-                <span className="text-honey-300 font-semibold">bertaqwa</span>,{" "}
-                <span className="text-honey-300 font-semibold">berprestasi</span>, dan berwawasan lingkungan.”
+                <span className="text-gold-300 font-semibold">beriman</span>,{" "}
+                <span className="text-gold-300 font-semibold">bertaqwa</span>,{" "}
+                <span className="text-gold-300 font-semibold">berprestasi</span>, dan berwawasan lingkungan.”
               </p>
 
               <div className="mt-10 pt-6 border-t border-white/20 text-[12px] tracking-[0.16em] uppercase text-white/75 font-semibold">
@@ -59,7 +59,7 @@ export const VisiMisi = () => {
             data-testid="misi-card"
             className="lg:col-span-7 p-8 lg:p-10 rounded-[32px] bg-white border border-cream-200 shadow-soft"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-coral-50 text-coral-700 mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 text-navy-700 mb-8">
               <Target size={14} />
               <span className="text-[11px] tracking-[0.18em] uppercase font-bold">Misi</span>
             </div>
@@ -71,7 +71,7 @@ export const VisiMisi = () => {
                   data-testid={`misi-item-${i + 1}`}
                   className="flex gap-5 group p-4 -mx-4 rounded-2xl hover:bg-cream-50 transition-colors duration-300"
                 >
-                  <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-coral to-coral-600 text-white font-bold flex items-center justify-center font-display tabular-nums shadow-glow">
+                  <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-navy to-navy-600 text-white font-bold flex items-center justify-center font-display tabular-nums shadow-glow">
                     {i + 1}
                   </span>
                   <p className="text-[15.5px] leading-relaxed text-ink-soft group-hover:text-ink transition-colors duration-300 pt-1.5">

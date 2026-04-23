@@ -22,7 +22,7 @@ export default async function AdminBeritaPage() {
         </div>
         <Link
           href="/admin/berita/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink text-cream-50 text-[13px] font-semibold hover:bg-coral transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink text-cream-50 text-[13px] font-semibold hover:bg-navy transition-colors"
         >
           <Plus size={15} /> Tambah Berita
         </Link>
@@ -38,7 +38,7 @@ export default async function AdminBeritaPage() {
               <div className="flex items-center gap-2 flex-wrap">
                 <span className="text-[10px] tracking-[0.14em] uppercase font-bold text-ink-faint">{n.category}</span>
                 {n.featured && (
-                  <span className="px-2 py-0.5 rounded-full bg-coral-50 text-coral-700 text-[10px] font-bold">Featured</span>
+                  <span className="px-2 py-0.5 rounded-full bg-navy-50 text-navy-700 text-[10px] font-bold">Featured</span>
                 )}
               </div>
               <p className="font-semibold text-ink text-[14px] mt-1 truncate">{n.title}</p>

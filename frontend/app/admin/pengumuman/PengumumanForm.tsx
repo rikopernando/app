@@ -43,7 +43,7 @@ export function PengumumanForm({ action, defaultValues }: Props) {
           <select
             name="urgency"
             defaultValue={defaultValues?.urgency ?? "Umum"}
-            className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral"
+            className="w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy"
           >
             {URGENCY.map((u) => <option key={u} value={u}>{u}</option>)}
           </select>
@@ -53,14 +53,14 @@ export function PengumumanForm({ action, defaultValues }: Props) {
       <Field label="Label Tanggal" name="date_label" required defaultValue={defaultValues?.dateLabel} placeholder="23 April 2026" />
 
       {error && (
-        <p className="text-[13px] text-coral-700 bg-coral-50 px-4 py-2.5 rounded-xl">{error}</p>
+        <p className="text-[13px] text-navy-700 bg-navy-50 px-4 py-2.5 rounded-xl">{error}</p>
       )}
 
       <div className="flex gap-3 pt-2">
         <button
           type="submit"
           disabled={pending}
-          className="px-6 py-2.5 rounded-xl bg-ink text-cream-50 font-semibold text-[13.5px] hover:bg-coral transition-colors disabled:opacity-60"
+          className="px-6 py-2.5 rounded-xl bg-ink text-cream-50 font-semibold text-[13.5px] hover:bg-navy transition-colors disabled:opacity-60"
         >
           {pending ? "Menyimpan..." : "Simpan"}
         </button>
@@ -81,7 +81,7 @@ function Field({
   label: string; name: string; required?: boolean; multiline?: boolean;
   rows?: number; defaultValue?: string; placeholder?: string;
 }) {
-  const cls = "w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral transition";
+  const cls = "w-full px-4 py-2.5 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[13.5px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition";
   return (
     <div>
       <label className="block text-[12.5px] font-semibold text-ink-soft mb-1.5">{label}</label>

@@ -27,9 +27,9 @@ const RANK_ICON: Record<string, LucideIcon> = {
 };
 
 const CATEGORY_COLORS: Record<string, { bg: string; text: string; chip: string }> = {
-  "Seni Budaya": { bg: "bg-coral-50", text: "text-coral-700", chip: "bg-coral text-white" },
+  "Seni Budaya": { bg: "bg-navy-50", text: "text-navy-700", chip: "bg-navy text-white" },
   Akademik: { bg: "bg-sky-50", text: "text-sky-600", chip: "bg-sky text-white" },
-  Olahraga: { bg: "bg-honey-50", text: "text-honey-600", chip: "bg-honey text-ink" },
+  Olahraga: { bg: "bg-gold-50", text: "text-gold-600", chip: "bg-gold text-ink" },
   Karakter: { bg: "bg-mint-50", text: "text-mint-600", chip: "bg-mint text-white" },
   Bahasa: { bg: "bg-sky-50", text: "text-sky-600", chip: "bg-sky text-white" },
   Lingkungan: { bg: "bg-mint-50", text: "text-mint-600", chip: "bg-mint text-white" },
@@ -45,7 +45,7 @@ export default async function PrestasiPage() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
           {/* Header */}
           <div className="max-w-3xl mb-14">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-honey-50 text-honey-600 text-[11px] tracking-[0.18em] uppercase font-bold">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-50 text-gold-600 text-[11px] tracking-[0.18em] uppercase font-bold">
               <Trophy size={12} /> Galeri Prestasi
             </span>
             <h1
@@ -53,7 +53,7 @@ export default async function PrestasiPage() {
               className="font-display mt-6 text-5xl sm:text-6xl lg:text-[72px] leading-[1.02] tracking-tight text-ink text-balance"
             >
               Karya & prestasi{" "}
-              <em className="not-italic font-semibold text-honey-600">anak-anak kami.</em>
+              <em className="not-italic font-semibold text-gold-600">anak-anak kami.</em>
             </h1>
             <p className="mt-6 text-[17px] leading-relaxed text-ink-soft max-w-2xl">
               Setiap piala, medali, dan penghargaan adalah cerita kerja keras siswa. Berikut koleksi prestasi kami dari tingkat kecamatan sampai provinsi — akademik, olahraga, seni, dan karakter.
@@ -66,7 +66,7 @@ export default async function PrestasiPage() {
             className="mb-12 p-7 lg:p-8 rounded-[28px] bg-white border border-cream-200 shadow-soft flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
           >
             <div className="flex items-center gap-5">
-              <div className="w-14 h-14 rounded-2xl bg-honey-50 text-honey-600 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-2xl bg-gold-50 text-gold-600 flex items-center justify-center">
                 <Trophy size={24} />
               </div>
               <div>
@@ -79,8 +79,8 @@ export default async function PrestasiPage() {
             <div className="flex items-center gap-5 flex-wrap">
               {[
                 { n: "18", l: "Akademik", color: "text-sky-600" },
-                { n: "14", l: "Olahraga", color: "text-honey-600" },
-                { n: "10", l: "Seni", color: "text-coral" },
+                { n: "14", l: "Olahraga", color: "text-gold-600" },
+                { n: "10", l: "Seni", color: "text-navy" },
                 { n: "5", l: "Karakter", color: "text-mint-600" },
               ].map((t) => (
                 <div key={t.l} className="text-center px-3">
@@ -119,7 +119,7 @@ export default async function PrestasiPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/50 to-transparent" />
                     <div className="relative z-10 h-full p-7 flex flex-col justify-between min-h-[320px]">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-honey text-ink text-[10.5px] tracking-[0.16em] uppercase font-bold">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold text-ink text-[10.5px] tracking-[0.16em] uppercase font-bold">
                           <Trophy size={11} /> {a.rank}
                         </span>
                         <span className="px-2.5 py-1 rounded-full bg-white/15 backdrop-blur-sm text-[10px] tracking-[0.14em] uppercase font-bold text-white/90">
@@ -127,7 +127,7 @@ export default async function PrestasiPage() {
                         </span>
                       </div>
                       <div>
-                        <p className="text-[11.5px] tracking-[0.18em] uppercase text-honey-300 font-bold">
+                        <p className="text-[11.5px] tracking-[0.18em] uppercase text-gold-300 font-bold">
                           {a.category}
                         </p>
                         <h3 className="font-display mt-3 text-2xl lg:text-3xl leading-[1.1] text-white text-balance">
@@ -158,7 +158,7 @@ export default async function PrestasiPage() {
                       {a.level} · {a.year}
                     </span>
                   </div>
-                  <p className="mt-8 font-display text-lg text-coral font-bold">{a.rank}</p>
+                  <p className="mt-8 font-display text-lg text-navy font-bold">{a.rank}</p>
                   <h3 className="mt-2 font-display text-xl lg:text-2xl leading-[1.15] text-ink text-balance">
                     {a.title}
                   </h3>

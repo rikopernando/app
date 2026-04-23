@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-type Tone = "coral" | "sky" | "mint" | "honey";
+type Tone = "navy" | "sky" | "mint" | "gold";
 interface StatItem {
   icon: LucideIcon;
   label: string;
@@ -21,19 +21,19 @@ interface StatItem {
 }
 
 const STATS: StatItem[] = [
-  { icon: UsersRound, label: "Total Siswa", value: 634, note: "TA 2025/2026", tone: "coral" },
+  { icon: UsersRound, label: "Total Siswa", value: 634, note: "TA 2025/2026", tone: "navy" },
   { icon: UserCheck, label: "Siswa Laki-laki", value: 308, note: "48,6%", tone: "sky" },
   { icon: Users, label: "Siswa Perempuan", value: 326, note: "51,4%", tone: "mint" },
-  { icon: GraduationCap, label: "Guru & Tenaga", value: 46, note: "Rasio 1:14", tone: "honey" },
+  { icon: GraduationCap, label: "Guru & Tenaga", value: 46, note: "Rasio 1:14", tone: "gold" },
   { icon: DoorOpen, label: "Ruang Kelas", value: 15, note: "Kondisi baik", tone: "sky" },
   { icon: LayoutGrid, label: "Rombel", value: 21, note: "Pagi · 6 Hari", tone: "mint" },
 ];
 
 const TONE_STYLES: Record<Tone, { card: string; icon: string }> = {
-  coral: { card: "bg-coral text-white", icon: "bg-white/20 text-white" },
+  navy: { card: "bg-navy text-white", icon: "bg-white/20 text-white" },
   sky: { card: "bg-white", icon: "bg-sky-50 text-sky-600" },
   mint: { card: "bg-white", icon: "bg-mint-50 text-mint-600" },
-  honey: { card: "bg-white", icon: "bg-honey-50 text-honey-600" },
+  gold: { card: "bg-white", icon: "bg-gold-50 text-gold-600" },
 };
 
 const useCountUp = (target: number, start: boolean, duration = 1300) => {
@@ -64,7 +64,7 @@ const StatCard = ({
 }: StatItem & { visible: boolean }) => {
   const n = useCountUp(value, visible);
   const t = TONE_STYLES[tone];
-  const isFilled = tone === "coral";
+  const isFilled = tone === "navy";
   return (
     <div
       data-testid={`stat-card-${label.toLowerCase().replace(/\s|&/g, "-")}`}
@@ -138,7 +138,7 @@ export const Stats = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-ink text-balance"
             >
               Sekolah kami dalam{" "}
-              <em className="not-italic font-semibold text-coral">angka.</em>
+              <em className="not-italic font-semibold text-navy">angka.</em>
             </h2>
           </div>
           <p className="max-w-md text-[15.5px] leading-relaxed text-ink-soft">
@@ -154,7 +154,7 @@ export const Stats = () => {
 
         <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-[13px] text-ink-soft">
           <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-coral" /> NPSN 10803558
+            <span className="w-1.5 h-1.5 rounded-full bg-navy" /> NPSN 10803558
           </span>
           <span className="hidden sm:inline text-cream-400">·</span>
           <span>Luas Tanah: 6.460 m²</span>

@@ -22,7 +22,7 @@ export default async function AdminPrestasiPage() {
         </div>
         <Link
           href="/admin/prestasi/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink text-cream-50 text-[13px] font-semibold hover:bg-coral transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink text-cream-50 text-[13px] font-semibold hover:bg-navy transition-colors"
         >
           <Plus size={15} /> Tambah Prestasi
         </Link>

@@ -13,10 +13,10 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Pengumuman: "bg-coral-50 text-coral-700",
+  Pengumuman: "bg-navy-50 text-navy-700",
   Kegiatan: "bg-mint-50 text-mint-600",
   Akademik: "bg-sky-50 text-sky-600",
-  "Info Sekolah": "bg-honey-50 text-honey-600",
+  "Info Sekolah": "bg-gold-50 text-gold-600",
 };
 
 export async function generateStaticParams() {
@@ -93,7 +93,7 @@ export default async function BeritaDetailPage({
           <Link
             href="/berita"
             data-testid="back-to-berita"
-            className="inline-flex items-center gap-2 text-[13px] font-semibold text-ink-soft hover:text-coral transition-colors"
+            className="inline-flex items-center gap-2 text-[13px] font-semibold text-ink-soft hover:text-navy transition-colors"
           >
             <ArrowLeft size={15} /> Kembali ke Berita
           </Link>
@@ -145,14 +145,14 @@ export default async function BeritaDetailPage({
           <div className="mt-12 flex items-center justify-between pt-8 border-t border-cream-200">
             <Link
               href="/berita"
-              className="inline-flex items-center gap-2 text-[14px] font-semibold text-ink-soft hover:text-coral transition-colors"
+              className="inline-flex items-center gap-2 text-[14px] font-semibold text-ink-soft hover:text-navy transition-colors"
             >
               <ArrowLeft size={16} /> Semua Berita
             </Link>
             <button
               type="button"
               data-testid="share-btn"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-cream-50 text-[13px] font-semibold hover:bg-coral transition-colors duration-400"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-cream-50 text-[13px] font-semibold hover:bg-navy transition-colors duration-400"
             >
               <Share2 size={14} /> Bagikan
             </button>
@@ -180,7 +180,7 @@ export default async function BeritaDetailPage({
                 </div>
                 <div className="p-5">
                   <p className="text-[11.5px] text-ink-faint font-semibold">{n.dateLabel}</p>
-                  <h3 className="font-display mt-2 text-lg leading-[1.2] text-ink group-hover:text-coral transition-colors">
+                  <h3 className="font-display mt-2 text-lg leading-[1.2] text-ink group-hover:text-navy transition-colors">
                     {n.title}
                   </h3>
                 </div>

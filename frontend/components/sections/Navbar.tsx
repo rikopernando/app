@@ -36,9 +36,9 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-20">
           <Link href="/" data-testid="nav-logo" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-coral to-coral-600 flex items-center justify-center ring-1 ring-coral-600/30 shadow-glow transition-transform duration-500 group-hover:rotate-[-6deg]">
+            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-navy to-navy-600 flex items-center justify-center ring-1 ring-navy-600/30 shadow-glow transition-transform duration-500 group-hover:rotate-[-6deg]">
               <span className="font-display text-white text-lg font-bold leading-none">S</span>
-              <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-honey ring-2 ring-cream-50" />
+              <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gold ring-2 ring-cream-50" />
             </div>
             <div className="leading-tight">
               <p className="font-display text-[15.5px] font-semibold text-ink tracking-tight">
@@ -67,7 +67,7 @@ export const Navbar = () => {
             <Link
               href="/#ppdb"
               data-testid="nav-cta-ppdb"
-              className="group inline-flex items-center gap-2 pl-5 pr-2.5 py-2 rounded-full bg-ink text-cream-50 text-[13px] font-semibold tracking-wide hover:bg-coral transition-all duration-500"
+              className="group inline-flex items-center gap-2 pl-5 pr-2.5 py-2 rounded-full bg-ink text-cream-50 text-[13px] font-semibold tracking-wide hover:bg-navy transition-all duration-500"
             >
               Daftar PPDB
               <span className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
@@ -103,7 +103,7 @@ export const Navbar = () => {
             <Link
               href="/#ppdb"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex justify-center items-center px-5 py-3 rounded-full bg-coral text-white font-semibold shadow-glow"
+              className="mt-2 inline-flex justify-center items-center px-5 py-3 rounded-full bg-navy text-white font-semibold shadow-glow"
             >
               Daftar PPDB ✨
             </Link>

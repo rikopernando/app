@@ -56,7 +56,7 @@ export default function AdminLoginPage() {
               type="email"
               required
               autoComplete="email"
-              className="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[14px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral transition"
+              className="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[14px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition"
             />
           </div>
           <div>
@@ -69,18 +69,18 @@ export default function AdminLoginPage() {
               type="password"
               required
               autoComplete="current-password"
-              className="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[14px] outline-none focus:ring-2 focus:ring-coral/30 focus:border-coral transition"
+              className="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 text-ink text-[14px] outline-none focus:ring-2 focus:ring-navy/30 focus:border-navy transition"
             />
           </div>
 
           {error && (
-            <p className="text-[13px] text-coral-700 bg-coral-50 px-4 py-2.5 rounded-xl">{error}</p>
+            <p className="text-[13px] text-navy-700 bg-navy-50 px-4 py-2.5 rounded-xl">{error}</p>
           )}
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-ink text-cream-50 font-semibold text-[14px] hover:bg-coral transition-colors duration-300 disabled:opacity-60"
+            className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-ink text-cream-50 font-semibold text-[14px] hover:bg-navy transition-colors duration-300 disabled:opacity-60"
           >
             {loading ? <Loader2 size={16} className="animate-spin" /> : <LogIn size={16} />}
             {loading ? "Masuk..." : "Masuk"}

@@ -11,7 +11,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-type Color = "coral" | "sky" | "mint" | "honey";
+type Color = "navy" | "sky" | "mint" | "gold";
 interface TimelineStep {
   date: string;
   month: string;
@@ -21,17 +21,17 @@ interface TimelineStep {
 }
 
 const TIMELINE: TimelineStep[] = [
-  { date: "10 Mei", month: "2026", title: "Pendaftaran Dibuka", desc: "Orang tua bisa mendaftarkan calon siswa secara daring atau luring di sekolah.", color: "coral" },
+  { date: "10 Mei", month: "2026", title: "Pendaftaran Dibuka", desc: "Orang tua bisa mendaftarkan calon siswa secara daring atau luring di sekolah.", color: "navy" },
   { date: "25 Mei", month: "2026", title: "Tes Seleksi", desc: "Tes akademik dasar dan wawancara orang tua bersama siswa.", color: "sky" },
   { date: "01 Jun", month: "2026", title: "Pengumuman Hasil", desc: "Hasil seleksi diumumkan di papan sekolah dan website.", color: "mint" },
-  { date: "10 Jun", month: "2026", title: "Daftar Ulang", desc: "Melengkapi berkas daftar ulang & orientasi calon siswa baru.", color: "honey" },
+  { date: "10 Jun", month: "2026", title: "Daftar Ulang", desc: "Melengkapi berkas daftar ulang & orientasi calon siswa baru.", color: "gold" },
 ];
 
 const TONE: Record<Color, { bg: string; text: string; sub: string; dot: string }> = {
-  coral: { bg: "bg-coral-50", text: "text-coral-700", sub: "text-coral-700/70", dot: "bg-coral" },
+  navy: { bg: "bg-navy-50", text: "text-navy-700", sub: "text-navy-700/70", dot: "bg-navy" },
   sky: { bg: "bg-sky-50", text: "text-sky-600", sub: "text-sky-600/70", dot: "bg-sky" },
   mint: { bg: "bg-mint-50", text: "text-mint-600", sub: "text-mint-600/70", dot: "bg-mint" },
-  honey: { bg: "bg-honey-50", text: "text-honey-600", sub: "text-honey-600/70", dot: "bg-honey" },
+  gold: { bg: "bg-gold-50", text: "text-gold-600", sub: "text-gold-600/70", dot: "bg-gold" },
 };
 
 const REQUIREMENTS = [
@@ -54,7 +54,7 @@ export const PPDB = () => {
 
   return (
     <section id="ppdb" data-testid="ppdb-section" className="relative py-24 lg:py-32 bg-ink text-cream-50 overflow-hidden">
-      <div className="absolute top-10 left-1/4 w-80 h-80 bg-coral/25 blur-3xl rounded-full" aria-hidden />
+      <div className="absolute top-10 left-1/4 w-80 h-80 bg-navy/25 blur-3xl rounded-full" aria-hidden />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky/20 blur-3xl rounded-full" aria-hidden />
       <div
         aria-hidden
@@ -65,7 +65,7 @@ export const PPDB = () => {
       <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
           <div className="lg:col-span-7">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-coral/25 text-coral-300 text-[11px] tracking-[0.18em] uppercase font-bold">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy/25 text-navy-300 text-[11px] tracking-[0.18em] uppercase font-bold">
               <Sparkles size={12} /> PPDB 2026 / 2027
             </span>
             <h2
@@ -73,7 +73,7 @@ export const PPDB = () => {
               className="font-display mt-6 text-4xl sm:text-5xl lg:text-[54px] leading-[1.08] tracking-tight text-cream-50 text-balance"
             >
               Yuk, jadi bagian dari{" "}
-              <em className="not-italic font-semibold text-honey-300">keluarga baru</em> di SMPN 1 Sumber Jaya.
+              <em className="not-italic font-semibold text-gold-300">keluarga baru</em> di SMPN 1 Sumber Jaya.
             </h2>
           </div>
           <p className="lg:col-span-5 text-[15.5px] leading-relaxed text-cream-300 max-w-md lg:ml-auto">
@@ -87,8 +87,8 @@ export const PPDB = () => {
             className="lg:col-span-7 rounded-[32px] p-8 lg:p-10 bg-white/[0.04] border border-white/10 backdrop-blur-sm"
           >
             <div className="flex items-center gap-2.5 mb-8">
-              <CalendarDays size={18} className="text-honey-300" />
-              <h3 className="text-[13px] tracking-[0.2em] uppercase font-bold text-honey-300">
+              <CalendarDays size={18} className="text-gold-300" />
+              <h3 className="text-[13px] tracking-[0.2em] uppercase font-bold text-gold-300">
                 Jadwal Pendaftaran
               </h3>
             </div>
@@ -122,8 +122,8 @@ export const PPDB = () => {
           <div className="lg:col-span-5 space-y-6">
             <div data-testid="ppdb-requirements" className="rounded-[32px] p-8 lg:p-10 bg-white text-ink shadow-soft-lg">
               <div className="flex items-center gap-2.5 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-coral-50 flex items-center justify-center">
-                  <ClipboardCheck size={18} className="text-coral-700" />
+                <div className="w-10 h-10 rounded-xl bg-navy-50 flex items-center justify-center">
+                  <ClipboardCheck size={18} className="text-navy-700" />
                 </div>
                 <div>
                   <p className="text-[10.5px] uppercase tracking-[0.16em] text-ink-faint font-bold">Siapkan</p>
@@ -145,7 +145,7 @@ export const PPDB = () => {
               </ul>
             </div>
 
-            <div data-testid="ppdb-download-card" className="relative rounded-[32px] p-8 bg-gradient-to-br from-coral to-coral-600 text-white overflow-hidden shadow-glow">
+            <div data-testid="ppdb-download-card" className="relative rounded-[32px] p-8 bg-gradient-to-br from-navy to-navy-600 text-white overflow-hidden shadow-glow">
               <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-white/15 blur-2xl" />
               <div className="relative">
                 <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center mb-5">
@@ -160,7 +160,7 @@ export const PPDB = () => {
                   type="button"
                   onClick={handleDownload}
                   data-testid="ppdb-download-btn"
-                  className="mt-6 w-full inline-flex items-center justify-between gap-3 pl-5 pr-2.5 py-2.5 rounded-full bg-white text-ink font-semibold hover:bg-honey hover:text-ink transition-all duration-300 group"
+                  className="mt-6 w-full inline-flex items-center justify-between gap-3 pl-5 pr-2.5 py-2.5 rounded-full bg-white text-ink font-semibold hover:bg-gold hover:text-ink transition-all duration-300 group"
                 >
                   <span className="flex items-center gap-2.5">
                     <Download size={16} /> Unduh Formulir (PDF)

@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  Pengumuman: "bg-coral-50 text-coral-700",
+  Pengumuman: "bg-navy-50 text-navy-700",
   Kegiatan: "bg-mint-50 text-mint-600",
   Akademik: "bg-sky-50 text-sky-600",
-  "Info Sekolah": "bg-honey-50 text-honey-600",
+  "Info Sekolah": "bg-gold-50 text-gold-600",
 };
 
 export default async function BeritaPage() {
@@ -82,13 +82,13 @@ export default async function BeritaPage() {
                       </>
                     )}
                   </div>
-                  <h3 className="font-display mt-3 text-xl lg:text-2xl leading-[1.2] text-ink text-balance group-hover:text-coral transition-colors duration-300">
+                  <h3 className="font-display mt-3 text-xl lg:text-2xl leading-[1.2] text-ink text-balance group-hover:text-navy transition-colors duration-300">
                     {n.title}
                   </h3>
                   <p className="mt-3 text-[14px] leading-relaxed text-ink-soft line-clamp-3">
                     {n.excerpt}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-coral font-bold text-[12.5px] group/cta">
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-navy font-bold text-[12.5px] group/cta">
                     Baca selengkapnya
                     <ArrowUpRight size={14} className="transition-transform duration-400 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
                   </span>

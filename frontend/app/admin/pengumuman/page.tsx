@@ -7,8 +7,8 @@ import { DeleteButton } from "../DeleteButton";
 export const dynamic = "force-dynamic";
 
 const URGENCY_COLOR: Record<string, string> = {
-  Penting: "bg-coral-50 text-coral-700",
-  Segera: "bg-honey-50 text-honey-600",
+  Penting: "bg-navy-50 text-navy-700",
+  Segera: "bg-gold-50 text-gold-600",
   Umum: "bg-sky-50 text-sky-600",
 };
 
@@ -28,7 +28,7 @@ export default async function AdminPengumumanPage() {
         </div>
         <Link
           href="/admin/pengumuman/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink text-cream-50 text-[13px] font-semibold hover:bg-coral transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-ink text-cream-50 text-[13px] font-semibold hover:bg-navy transition-colors"
         >
           <Plus size={15} /> Tambah Pengumuman
         </Link>

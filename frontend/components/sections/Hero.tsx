@@ -12,7 +12,7 @@ export const Hero = () => {
       data-testid="hero-section"
       className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-cream-50"
     >
-      <div aria-hidden className="absolute top-32 -left-20 w-[360px] h-[360px] bg-honey/35 blur-3xl rounded-full" />
+      <div aria-hidden className="absolute top-32 -left-20 w-[360px] h-[360px] bg-gold/35 blur-3xl rounded-full" />
       <div aria-hidden className="absolute bottom-10 right-[-80px] w-[440px] h-[440px] bg-mint/35 blur-3xl rounded-full" />
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.04]" />
 
@@ -20,7 +20,7 @@ export const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 pl-2 pr-4 py-2 rounded-full bg-white/70 backdrop-blur-sm border border-cream-300 animate-fade-up" style={{ animationDelay: "60ms" }}>
-              <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-coral text-white text-[11px] font-bold tracking-wide">
+              <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-navy text-white text-[11px] font-bold tracking-wide">
                 <Sparkles size={12} /> BARU
               </span>
               <span className="text-[12.5px] font-semibold text-ink">
@@ -35,8 +35,8 @@ export const Hero = () => {
             >
               Tempat{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 font-bold text-coral-700">belajar</span>
-                <span aria-hidden className="absolute left-0 right-0 bottom-1 h-3 bg-honey/60 rounded-full -z-0" />
+                <span className="relative z-10 font-bold text-navy-700">belajar</span>
+                <span aria-hidden className="absolute left-0 right-0 bottom-1 h-3 bg-gold/60 rounded-full -z-0" />
               </span>
               {" "}yang{" "}
               <span className="font-semibold text-sky-600">hangat</span> untuk
@@ -57,10 +57,10 @@ export const Hero = () => {
               <Link
                 href="/#ppdb"
                 data-testid="hero-cta-primary"
-                className="group inline-flex items-center gap-3 pl-7 pr-2.5 py-2.5 rounded-full bg-ink text-cream-50 font-semibold hover:bg-coral transition-all duration-500 shadow-soft-lg"
+                className="group inline-flex items-center gap-3 pl-7 pr-2.5 py-2.5 rounded-full bg-ink text-cream-50 font-semibold hover:bg-navy transition-all duration-500 shadow-soft-lg"
               >
                 Daftar Sekarang
-                <span className="w-11 h-11 rounded-full bg-coral flex items-center justify-center group-hover:bg-white group-hover:text-coral transition-all duration-500">
+                <span className="w-11 h-11 rounded-full bg-navy flex items-center justify-center group-hover:bg-white group-hover:text-navy transition-all duration-500">
                   <ArrowRight size={16} />
                 </span>
               </Link>
@@ -75,7 +75,7 @@ export const Hero = () => {
 
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 animate-fade-up" style={{ animationDelay: "520ms" }}>
               <div className="flex -space-x-2">
-                {["bg-coral-300", "bg-mint-300", "bg-honey-300", "bg-sky-300"].map((c, i) => (
+                {["bg-navy-300", "bg-mint-300", "bg-gold-300", "bg-sky-300"].map((c, i) => (
                   <span key={i} className={`w-8 h-8 rounded-full ${c} ring-2 ring-cream-50`} />
                 ))}
               </div>
@@ -83,7 +83,7 @@ export const Hero = () => {
                 <span className="font-bold text-ink">634 siswa</span> belajar bersama setiap hari
               </p>
               <div className="flex items-center gap-1.5">
-                <div className="flex items-center gap-0.5 text-honey-600">
+                <div className="flex items-center gap-0.5 text-gold-600">
                   {[0, 1, 2, 3, 4].map((i) => (
                     <Star key={i} size={14} fill="currentColor" />
                   ))}
@@ -129,12 +129,12 @@ export const Hero = () => {
                 <p className="text-[10.5px] tracking-[0.14em] uppercase text-ink-faint font-semibold">Ekstrakurikuler</p>
                 <p className="mt-1 font-display text-xl text-ink">12+ pilihan</p>
                 <div className="flex gap-1 mt-2">
-                  <span className="px-2 py-0.5 rounded-full bg-coral-50 text-coral-700 text-[10px] font-bold">Seni</span>
+                  <span className="px-2 py-0.5 rounded-full bg-navy-50 text-navy-700 text-[10px] font-bold">Seni</span>
                   <span className="px-2 py-0.5 rounded-full bg-sky-50 text-sky-600 text-[10px] font-bold">Olahraga</span>
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -right-6 -translate-y-1/2 bg-honey rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-soft animate-float rotate-[-8deg]" style={{ animationDelay: "0.7s" }}>
+              <div className="absolute top-1/2 -right-6 -translate-y-1/2 bg-gold rounded-full w-16 h-16 flex flex-col items-center justify-center shadow-soft animate-float rotate-[-8deg]" style={{ animationDelay: "0.7s" }}>
                 <span className="text-[8px] uppercase tracking-wider font-bold text-ink">Sejak</span>
                 <span className="font-display text-sm font-bold text-ink leading-none mt-0.5">1985</span>
               </div>

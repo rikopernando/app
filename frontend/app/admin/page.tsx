@@ -37,14 +37,14 @@ export default async function AdminDashboardPage() {
       count: counts.pengumuman,
       href: "/admin/pengumuman",
       icon: Megaphone,
-      color: "bg-coral-50 text-coral-700",
+      color: "bg-navy-50 text-navy-700",
     },
     {
       label: "Prestasi",
       count: counts.prestasi,
       href: "/admin/prestasi",
       icon: Trophy,
-      color: "bg-honey-50 text-honey-600",
+      color: "bg-gold-50 text-gold-600",
     },
   ];
 
@@ -74,7 +74,7 @@ export default async function AdminDashboardPage() {
               <p className="text-[13px] text-ink-soft font-semibold">{label}</p>
               <ArrowUpRight
                 size={13}
-                className="text-ink-faint group-hover:text-coral transition-colors"
+                className="text-ink-faint group-hover:text-navy transition-colors"
               />
             </div>
           </Link>

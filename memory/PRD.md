@@ -1,15 +1,18 @@
 # PRD — SMP Negeri 1 Sumber Jaya · Landing Page + Next.js
 
 ## Original Problem Statement
+
 > Build me a landing page for school website
 
 ## Evolution
+
 - **v1 (2026-04-21)** CRA + earthy terracotta + Playfair/Manrope
 - **v2 (2026-04-22)** CRA + soft friendly palette + Fraunces (serif)
 - **v2.1 (2026-04-22)** CRA + Bricolage Grotesque (replace Fraunces)
 - **v3 (2026-04-22)** **Next.js 15 + TypeScript** migration → SSR/SSG, SEO-ready
 
 ## Architecture (v3)
+
 - **Stack**: Next.js 15 App Router + TypeScript + Tailwind CSS + Sonner toasts — frontend only
 - **Rendering**: SSG for listing pages, static per-slug pages via `generateStaticParams`, per-page metadata via `generateMetadata`
 - **Fonts**: loaded via `next/font/google` (Bricolage Grotesque + Plus Jakarta Sans) — no render-blocking
@@ -18,6 +21,7 @@
 - **TypeScript**: strict mode, `@/*` path alias, shared types in `lib/types.ts`
 
 ### File structure
+
 ```
 /app/frontend/
 ├── app/
@@ -45,18 +49,20 @@
 ```
 
 ### Routes
-| Route | Type | SEO |
-|-------|------|-----|
-| `/` | SSG landing | og:website |
-| `/berita` | SSG listing | og:website |
-| `/berita/[slug]` | SSG per article | og:article + og:image + published_time + author |
-| `/pengumuman` | SSG listing | og:website |
-| `/pengumuman/[slug]` | SSG per item | og:article |
-| `/prestasi` | SSG | og:website |
-| `/sitemap.xml` | auto | — |
-| `/robots.txt` | auto | — |
+
+| Route                | Type            | SEO                                             |
+| -------------------- | --------------- | ----------------------------------------------- |
+| `/`                  | SSG landing     | og:website                                      |
+| `/berita`            | SSG listing     | og:website                                      |
+| `/berita/[slug]`     | SSG per article | og:article + og:image + published_time + author |
+| `/pengumuman`        | SSG listing     | og:website                                      |
+| `/pengumuman/[slug]` | SSG per item    | og:article                                      |
+| `/prestasi`          | SSG             | og:website                                      |
+| `/sitemap.xml`       | auto            | —                                               |
+| `/robots.txt`        | auto            | —                                               |
 
 ## Key Wins (v3)
+
 - ✅ Per-page unique SEO tags (Google + WhatsApp/Facebook share previews)
 - ✅ Content server-rendered (visible to bots without JS)
 - ✅ 13-URL sitemap auto-generated from content
@@ -64,13 +70,16 @@
 - ✅ Testing agent: **100% pass**, 0 console errors, all SEO checks verified via curl
 
 ## Prioritized Backlog
+
 ### P1
+
 - [ ] Replace Pexels images with real school photos
 - [ ] Real PPDB PDF served from `/public/ppdb/formulir-ppdb-2026.pdf`
 - [ ] Prune legacy CRA dependencies (react-scripts, craco, react-router-dom) to shrink bundle
 - [ ] Custom OG image at `/public/og-image.jpg` for better social previews
 
 ### P2
+
 - [ ] CMS integration (e.g., Payload, Sanity, or Contentlayer) so school staff can post berita/pengumuman without deploy
 - [ ] Search functionality on /berita & /pengumuman
 - [ ] Category filter on /berita
@@ -82,9 +91,11 @@
 - [ ] PPDB online form (MongoDB backend)
 
 ### P0
+
 (No blocking issues.)
 
 ## Next Tasks
+
 1. Replace images with real school photos + add real PPDB PDF
 2. Add JSON-LD structured data for richer Google results
 3. Set up a CMS so school staff can self-publish berita

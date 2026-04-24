@@ -17,7 +17,7 @@ export const SITE = {
   meta: {
     npsn: "10803558",
     akreditasi: "B",
-    kepalaSekolah: "Adi Lesmana",
+    kepalaSekolah: "Arrahyu Adryan, S.Pd.,Gr",
     kurikulum: "Kurikulum Merdeka",
   },
   ogImage: "/og-image.jpg",

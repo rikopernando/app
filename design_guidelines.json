@@ -64,7 +64,12 @@
         "copy": {
           "heading": "Selamat Datang di SMPN 1 Sumber Jaya",
           "text": "Sebagai sekolah menengah pertama negeri yang berdedikasi, kami berkomitmen mencetak generasi penerus bangsa yang berkualitas, berbudi pekerti luhur, dan berdaya saing.",
-          "badges": ["Akreditasi: B", "NPSN: 10803558", "Kurikulum Merdeka", "Kepala Sekolah: Adi Lesmana"]
+          "badges": [
+            "Akreditasi: B",
+            "NPSN: 10803558",
+            "Kurikulum Merdeka",
+            "Kepala Sekolah: Arrahyu Adryan, S.Pd.,Gr"
+          ]
         }
       },
       {

@@ -10,7 +10,7 @@ const MISI = [
 
 export const VisiMisi = () => {
   return (
-    <section id="visi-misi" data-testid="visi-misi-section" className="relative py-24 lg:py-32 bg-cream-50 overflow-hidden">
+    <section id="visi-misi" data-testid="visi-misi-section" className="relative py-24 lg:py-32 bg-white border-t border-cream-200 overflow-hidden">
       <div className="absolute top-20 right-10 w-48 h-48 bg-mint/25 blur-3xl rounded-full" aria-hidden />
       <div className="absolute bottom-20 -left-10 w-56 h-56 bg-navy/20 blur-3xl rounded-full" aria-hidden />
 
@@ -69,7 +69,7 @@ export const VisiMisi = () => {
                 <li
                   key={i}
                   data-testid={`misi-item-${i + 1}`}
-                  className="flex gap-5 group p-4 -mx-4 rounded-2xl hover:bg-cream-50 transition-colors duration-300"
+                  className="flex gap-5 group p-4 -mx-4 rounded-2xl hover:bg-cream-100 transition-colors duration-300"
                 >
                   <span className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-navy to-navy-600 text-white font-bold flex items-center justify-center font-display tabular-nums shadow-glow">
                     {i + 1}

@@ -19,6 +19,7 @@ interface Program {
   img?: string;
   featured?: boolean;
   color?: string;
+  cardBg?: string;
 }
 
 const PROGRAMS: Program[] = [
@@ -31,11 +32,11 @@ const PROGRAMS: Program[] = [
     img: "https://images.pexels.com/photos/8617715/pexels-photo-8617715.jpeg?auto=compress&cs=tinysrgb&w=900",
     featured: true,
   },
-  { icon: Tent, tag: "Karakter", title: "Pramuka & Kepanduan", desc: "Pembentukan karakter, kemandirian, kepemimpinan.", span: "lg:col-span-3", color: "bg-navy-50 text-navy-700" },
-  { icon: Palette, tag: "Seni", title: "Seni & Budaya Lokal", desc: "Tari, musik tradisional, kearifan Lampung Barat.", span: "lg:col-span-3", color: "bg-mint-50 text-mint-600" },
-  { icon: Trophy, tag: "Prestasi", title: "Olahraga", desc: "Voli, sepak bola, atletik, pencak silat.", span: "lg:col-span-2", color: "bg-gold-50 text-gold-600" },
-  { icon: Sprout, tag: "Lingkungan", title: "Adiwiyata", desc: "Budaya hijau & kepedulian ekosistem sekolah.", span: "lg:col-span-2", color: "bg-mint-50 text-mint-600" },
-  { icon: MonitorSmartphone, tag: "Digital", title: "Literasi TIK", desc: "Teknologi, keamanan digital, kolaborasi daring.", span: "lg:col-span-2", color: "bg-sky-50 text-sky-600" },
+  { icon: Tent, tag: "Karakter", title: "Pramuka & Kepanduan", desc: "Pembentukan karakter, kemandirian, kepemimpinan.", span: "lg:col-span-3", color: "bg-navy-50 text-navy-700", cardBg: "bg-navy-50/50" },
+  { icon: Palette, tag: "Seni", title: "Seni & Budaya Lokal", desc: "Tari, musik tradisional, kearifan Lampung Barat.", span: "lg:col-span-3", color: "bg-mint-50 text-mint-600", cardBg: "bg-mint-50/50" },
+  { icon: Trophy, tag: "Prestasi", title: "Olahraga", desc: "Voli, sepak bola, atletik, pencak silat.", span: "lg:col-span-2", color: "bg-gold-50 text-gold-600", cardBg: "bg-gold-50/60" },
+  { icon: Sprout, tag: "Lingkungan", title: "Adiwiyata", desc: "Budaya hijau & kepedulian ekosistem sekolah.", span: "lg:col-span-2", color: "bg-mint-50 text-mint-600", cardBg: "bg-mint-50/50" },
+  { icon: MonitorSmartphone, tag: "Digital", title: "Literasi TIK", desc: "Teknologi, keamanan digital, kolaborasi daring.", span: "lg:col-span-2", color: "bg-sky-50 text-sky-600", cardBg: "bg-sky-50/50" },
 ];
 
 export const Programs = () => {
@@ -110,18 +111,21 @@ export const Programs = () => {
               <article
                 key={i}
                 data-testid={`program-card-${p.title.toLowerCase().replace(/\s|&/g, "-")}`}
-                className={`${p.span} group relative rounded-[28px] p-7 bg-white border border-cream-200 hover:border-cream-300 hover:-translate-y-1 hover:shadow-soft-lg transition-all duration-500`}
+                className={`${p.span} group relative rounded-[28px] p-7 ${p.cardBg ?? "bg-white"} border border-cream-200 hover:border-cream-300 hover:-translate-y-1 hover:shadow-soft-lg transition-all duration-500 overflow-hidden`}
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div className={`w-12 h-12 rounded-2xl ${p.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
-                    <Icon size={19} />
+                <div aria-hidden className="absolute -bottom-5 -right-5 opacity-[0.07] pointer-events-none">
+                  <Icon size={110} />
+                </div>
+                <div className="relative flex items-center justify-between mb-6">
+                  <div className={`w-14 h-14 rounded-2xl ${p.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                    <Icon size={22} />
                   </div>
                   <span className="text-[10px] tracking-[0.18em] uppercase text-ink-faint font-bold">
                     {p.tag}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl leading-[1.15] text-ink">{p.title}</h3>
-                <p className="mt-2.5 text-[14px] leading-relaxed text-ink-soft">{p.desc}</p>
+                <h3 className="relative font-display text-2xl leading-[1.15] text-ink">{p.title}</h3>
+                <p className="relative mt-2.5 text-[14px] leading-relaxed text-ink-soft">{p.desc}</p>
               </article>
             );
           })}

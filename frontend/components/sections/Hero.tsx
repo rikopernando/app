@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, GraduationCap, Sparkles, Star } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, Palette, Sparkles, Star, Trophy } from "lucide-react";
 
 const HERO_IMG =
   "https://images.pexels.com/photos/8617769/pexels-photo-8617769.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -75,8 +75,15 @@ export const Hero = () => {
 
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-3 animate-fade-up" style={{ animationDelay: "520ms" }}>
               <div className="flex -space-x-2">
-                {["bg-navy-300", "bg-mint-300", "bg-gold-300", "bg-sky-300"].map((c, i) => (
-                  <span key={i} className={`w-8 h-8 rounded-full ${c} ring-2 ring-cream-50`} />
+                {[
+                  { Icon: GraduationCap, bg: "bg-navy-100", fg: "text-navy-700" },
+                  { Icon: BookOpen,      bg: "bg-sky-100",  fg: "text-sky-600"  },
+                  { Icon: Palette,       bg: "bg-mint-100", fg: "text-mint-600" },
+                  { Icon: Trophy,        bg: "bg-gold-100", fg: "text-gold-600" },
+                ].map(({ Icon, bg, fg }, i) => (
+                  <span key={i} className={`w-8 h-8 rounded-full ${bg} ${fg} ring-2 ring-cream-50 flex items-center justify-center`}>
+                    <Icon size={13} />
+                  </span>
                 ))}
               </div>
               <p className="text-[13px] text-ink-soft">

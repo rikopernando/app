@@ -13,7 +13,7 @@ const BADGES = [
 
 export const About = () => {
   return (
-    <section id="tentang" data-testid="about-section" className="relative py-24 lg:py-32 bg-cream-50">
+    <section id="tentang" data-testid="about-section" className="relative py-24 lg:py-32 bg-white border-t border-cream-200">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start">
           <div className="lg:col-span-5 relative">

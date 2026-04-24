@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Phone, Clock, Mail, Facebook, Instagram, Youtube, Heart } from "lucide-react";
 import { SITE } from "@/lib/site";
@@ -34,9 +35,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8 pb-10">
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-navy to-navy-600 flex items-center justify-center shadow-glow">
-                <span className="font-display text-white text-xl font-bold leading-none">S</span>
-              </div>
+              <Image src="/logo/logo.png" alt="Logo SMPN 1 Sumber Jaya" width={48} height={48} className="h-12 w-auto object-contain" />
               <div>
                 <p className="font-display text-xl text-ink leading-tight">{SITE.name}</p>
                 <p className="text-[11px] uppercase tracking-[0.16em] text-ink-faint font-bold mt-0.5">

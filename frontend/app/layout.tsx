@@ -20,7 +20,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FEFCF7",
+  themeColor: "#1E3A8A",
   width: "device-width",
   initialScale: 1,
 };
@@ -55,6 +55,15 @@ export const metadata: Metadata = {
     title: `${SITE.shortName} — ${SITE.tagline}`,
     description: SITE.description,
   },
+  icons: {
+    icon: [
+      { url: "/favicon_io/favicon.ico" },
+      { url: "/favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/favicon_io/apple-touch-icon.png" }],
+  },
+  manifest: "/favicon_io/site.webmanifest",
   robots: { index: true, follow: true },
   alternates: { canonical: SITE.url },
 };

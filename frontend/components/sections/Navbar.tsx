@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
@@ -35,10 +36,20 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" data-testid="nav-logo" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 rounded-2xl bg-gradient-to-br from-navy to-navy-600 flex items-center justify-center ring-1 ring-navy-600/30 shadow-glow transition-transform duration-500 group-hover:rotate-[-6deg]">
-              <span className="font-display text-white text-lg font-bold leading-none">S</span>
-              <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gold ring-2 ring-cream-50" />
+          <Link
+            href="/"
+            data-testid="nav-logo"
+            className="flex items-center gap-3 group"
+          >
+            <div className="transition-transform duration-500 group-hover:rotate-[-6deg]">
+              <Image
+                src="/logo/logo.png"
+                alt="Logo SMPN 1 Sumber Jaya"
+                width={44}
+                height={44}
+                className="w-11 h-11 object-contain"
+                priority
+              />
             </div>
             <div className="leading-tight">
               <p className="font-display text-[15.5px] font-semibold text-ink tracking-tight">
@@ -88,7 +99,10 @@ export const Navbar = () => {
       </div>
 
       {open && (
-        <div data-testid="nav-mobile-menu" className="lg:hidden bg-cream-50 border-t border-cream-300">
+        <div
+          data-testid="nav-mobile-menu"
+          className="lg:hidden bg-cream-50 border-t border-cream-300"
+        >
           <div className="px-5 py-5 flex flex-col gap-1">
             {NAV_LINKS.map((l) => (
               <Link

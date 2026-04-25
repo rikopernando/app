@@ -11,17 +11,22 @@ const NAV = [
   { href: "/admin/prestasi", label: "Prestasi", icon: Trophy, exact: false },
 ];
 
-export function AdminNav() {
+type Props = {
+  onNavigate?: () => void;
+};
+
+export function AdminNav({ onNavigate }: Props) {
   const pathname = usePathname();
 
   return (
-    <nav className="flex-1 px-3 py-2 space-y-0.5">
+    <nav className="flex-1 px-3 py-2 space-y-0.5 overflow-y-auto">
       {NAV.map(({ href, label, icon: Icon, exact }) => {
         const active = exact ? pathname === href : pathname.startsWith(href);
         return (
           <Link
             key={href}
             href={href}
+            onClick={onNavigate}
             className={`flex items-center gap-3 w-full px-4 py-2.5 rounded-xl text-[13.5px] font-semibold transition-all duration-200 ${
               active
                 ? "bg-white/15 text-white"

@@ -50,17 +50,17 @@ export default async function AdminDashboardPage() {
 
   return (
     <div className="max-w-4xl">
-      <div className="mb-10 pb-8 border-b border-cream-200">
+      <div className="mb-6 pb-6 sm:mb-10 sm:pb-8 border-b border-cream-200">
         <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink-faint mb-2">
           SMP Negeri 1 Sumber Jaya
         </p>
-        <h1 className="font-display text-4xl text-ink">Dashboard</h1>
-        <p className="mt-2 text-[14.5px] text-ink-soft">
+        <h1 className="font-display text-3xl sm:text-4xl text-ink">Dashboard</h1>
+        <p className="mt-2 text-[13.5px] sm:text-[14.5px] text-ink-soft">
           Kelola berita, pengumuman, dan prestasi yang tampil di website publik sekolah.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 mb-6 sm:mb-8">
         {stats.map(({ label, count, href, icon: Icon, accent, iconColor, desc }) => (
           <Link
             key={label}
@@ -68,14 +68,14 @@ export default async function AdminDashboardPage() {
             className="group relative overflow-hidden rounded-2xl bg-white border border-cream-200 shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300"
           >
             <div className={`h-1 w-full ${accent}`} />
-            <div className="p-6">
-              <div className={`w-11 h-11 rounded-xl ${iconColor} flex items-center justify-center mb-5`}>
-                <Icon size={18} />
+            <div className="p-4 sm:p-6">
+              <div className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl ${iconColor} flex items-center justify-center mb-4 sm:mb-5`}>
+                <Icon size={17} />
               </div>
-              <p className="font-display text-[42px] leading-none text-ink tabular-nums">{count}</p>
-              <p className="mt-1.5 text-[13.5px] font-bold text-ink">{label}</p>
-              <p className="text-[12px] text-ink-faint mt-0.5">{desc}</p>
-              <div className="mt-5 flex items-center gap-1.5 text-[12px] font-bold text-ink-faint group-hover:text-navy transition-colors duration-200">
+              <p className="font-display text-[34px] sm:text-[42px] leading-none text-ink tabular-nums">{count}</p>
+              <p className="mt-1.5 text-[13px] sm:text-[13.5px] font-bold text-ink">{label}</p>
+              <p className="text-[11.5px] sm:text-[12px] text-ink-faint mt-0.5">{desc}</p>
+              <div className="mt-4 sm:mt-5 flex items-center gap-1.5 text-[12px] font-bold text-ink-faint group-hover:text-navy transition-colors duration-200">
                 Kelola konten
                 <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform duration-200" />
               </div>

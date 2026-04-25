@@ -1,7 +1,7 @@
 export const SITE = {
   name: "SMP Negeri 1 Sumber Jaya",
   shortName: "SMPN 1 Sumber Jaya",
-  tagline: "Sekolah Ramah Anak di Lampung Barat — sejak 1985",
+  tagline: "Sekolahnya Generasi Berprestasi",
   description:
     "SMP Negeri 1 Sumber Jaya adalah sekolah menengah pertama negeri di Sumber Jaya, Lampung Barat. Akreditasi B, Kurikulum Merdeka, 634 siswa, 46 guru berdedikasi.",
   url: "https://edu-gateway-33.preview.emergentagent.com",

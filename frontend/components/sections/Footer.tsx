@@ -43,8 +43,11 @@ export const Footer = () => {
                 </p>
               </div>
             </div>
-            <p className="mt-6 max-w-md text-[14.5px] leading-relaxed text-ink-soft">
-              Sekolah menengah pertama negeri yang membimbing generasi Sumber Jaya tumbuh berakar pada budaya, berbunga pada prestasi.
+            <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-gold-600 font-bold">
+              Sekolahnya Generasi Berprestasi
+            </p>
+            <p className="mt-4 max-w-md text-[14.5px] leading-relaxed text-ink-soft">
+              Sekolah menengah pertama negeri di jantung Sumber Jaya — membentuk generasi yang beriman, bernalar kritis, dan siap menghadapi dunia.
             </p>
 
             <div className="mt-6 flex items-center gap-2.5">

@@ -56,7 +56,7 @@ export const Navbar = () => {
                 SMPN 1 Sumber Jaya
               </p>
               <p className="text-[10.5px] uppercase tracking-[0.16em] text-ink-soft font-semibold">
-                Sekolah Ramah Anak · Sejak 1985
+                Sekolahnya Generasi Berprestasi
               </p>
             </div>
           </Link>

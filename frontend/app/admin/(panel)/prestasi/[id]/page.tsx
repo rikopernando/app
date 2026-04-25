@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { updatePrestasi } from "../../actions";
+import { updatePrestasi } from "@/app/admin/actions";
 import { PrestasiForm } from "../PrestasiForm";
 import type { Achievement } from "@/lib/types";
 

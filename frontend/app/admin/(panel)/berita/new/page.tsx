@@ -1,4 +1,4 @@
-import { createNews } from "../../actions";
+import { createNews } from "@/app/admin/actions";
 import { NewsForm } from "../NewsForm";
 
 export default function NewBeritaPage() {

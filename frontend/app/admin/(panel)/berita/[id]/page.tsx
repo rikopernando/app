@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { updateNews } from "../../actions";
+import { updateNews } from "@/app/admin/actions";
 import { NewsForm } from "../NewsForm";
 import type { NewsArticle } from "@/lib/types";
 

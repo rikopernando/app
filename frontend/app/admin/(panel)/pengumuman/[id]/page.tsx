@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { updatePengumuman } from "../../actions";
+import { updatePengumuman } from "@/app/admin/actions";
 import { PengumumanForm } from "../PengumumanForm";
 import type { Pengumuman } from "@/lib/types";
 

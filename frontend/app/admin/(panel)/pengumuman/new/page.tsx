@@ -1,4 +1,4 @@
-import { createPengumuman } from "../../actions";
+import { createPengumuman } from "@/app/admin/actions";
 import { PengumumanForm } from "../PengumumanForm";
 
 export default function NewPengumumanPage() {

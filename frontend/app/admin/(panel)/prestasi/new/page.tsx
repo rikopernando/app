@@ -1,4 +1,4 @@
-import { createPrestasi } from "../../actions";
+import { createPrestasi } from "@/app/admin/actions";
 import { PrestasiForm } from "../PrestasiForm";
 
 export default function NewPrestasiPage() {
